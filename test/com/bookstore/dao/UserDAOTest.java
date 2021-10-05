@@ -32,8 +32,8 @@ public class UserDAOTest {
 	@Test
 	public void testCreateUsers() {
 		Users user1 = new Users();
-		user1.setEmail("testcreate3@gmail.com");
-		user1.setFullName("3");
+		user1.setEmail("testcreate4@gmail.com");
+		user1.setFullName("4");
 		user1.setPassword("1234567890");
 				
 		user1 = userDAO.create(user1);
@@ -45,7 +45,21 @@ public class UserDAOTest {
 	public void testCreateUsersFieldsNotSet() {
 		Users user1 = new Users();	
 		user1 = userDAO.create(user1);
-
+	}
+	
+	@Test
+	public void testUpdateUsers() {
+		Users user = new Users();
+		user.setUserId(29);
+		user.setEmail("update1@gmail.com");
+		user.setFullName("Update1");
+		user.setPassword("password2");
+		
+		user = userDAO.update(user);
+		String expected = "password2";
+		String actual = user.getPassword();
+		
+		assertEquals(expected, actual);
 	}
 	
 	@AfterClass
