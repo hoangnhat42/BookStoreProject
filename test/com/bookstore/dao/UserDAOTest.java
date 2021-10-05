@@ -2,8 +2,11 @@ package com.bookstore.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
@@ -25,66 +28,24 @@ public class UserDAOTest {
 		
 		userDAO = new UserDAO(entityManager);
 	}
-	
+
 	@Test
 	public void testCreateUsers() {
 		Users user1 = new Users();
-		user1.setEmail("beck@gmail.com");
-		user1.setFullName("beck");
-		user1.setPassword("123");
-		
+		user1.setEmail("testcreate3@gmail.com");
+		user1.setFullName("3");
+		user1.setPassword("1234567890");
+				
 		user1 = userDAO.create(user1);
-		
-		assertTrue(user1.getUserId() > 0);		
+
+		assertTrue(user1.getUserId() > 0);
 	}
 	
 	@Test(expected = PersistenceException.class)
 	public void testCreateUsersFieldsNotSet() {
 		Users user1 = new Users();	
 		user1 = userDAO.create(user1);
-	}
 
-	@Test
-	public void testUpdateUsers() {
-		Users user = new Users();
-		user.setUserId(19);
-		user.setEmail("update@gmail.com");
-		user.setFullName("Update");
-		user.setPassword("updated");
-		
-		user = userDAO.update(user);
-		String expected = "updated";
-		String actual = user.getPassword();
-		
-		assertEquals(expected, actual);
-	}
-	
-	@Test
-	public void testGetUsersFound() {
-		Integer userId = 19;
-		Users user = userDAO.get(userId);
-		if (user != null) {
-			System.out.println(user.getEmail());
-		}
-		assertNotNull(user);
-	}
-	
-	@Test
-	public void testGetUserNotFound() {
-		Integer userId = 99;
-		Users user = userDAO.get(userId);
-		
-		assertNull(user);
-	}
-	
-	@Test
-	public void testDeleteUsers() {
-		Integer userId = 5;
-		userDAO.delete(userId);
-		
-		Users user = userDAO.get(userId);
-		
-		assertNull(user);
 	}
 	
 	@AfterClass
