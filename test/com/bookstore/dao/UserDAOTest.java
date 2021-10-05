@@ -62,6 +62,40 @@ public class UserDAOTest {
 		assertEquals(expected, actual);
 	}
 	
+	@Test
+	public void testGetUsersFound() {
+		Integer userId = 19;
+		Users user = userDAO.get(userId);
+		if (user != null) {
+			System.out.println(user.getEmail());
+		}
+		assertNotNull(user);
+	}
+	
+	@Test
+	public void testGetUserNotFound() {
+		Integer userId = 99;
+		Users user = userDAO.get(userId);
+		
+		assertNull(user);
+	}
+	
+	@Test
+	public void testDeleteUsers() {
+		Integer userId = 27;
+		userDAO.delete(userId);
+		
+		Users user = userDAO.get(userId);
+		
+		assertNull(user);
+	}
+	
+	@Test(expected = EntityNotFoundException.class)
+	public void testDeleteNonExistUsers() {
+		Integer userId = 27;
+		userDAO.delete(userId);
+	}
+	
 	@AfterClass
 	public static void tearDownClass() {
 		entityManager.close();
