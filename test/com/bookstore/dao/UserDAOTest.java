@@ -96,6 +96,23 @@ public class UserDAOTest {
 		userDAO.delete(userId);
 	}
 	
+	@Test
+	public void testListAll() {
+		List<Users> listUsers =  userDAO.listAll();
+		
+		for (Users user : listUsers) {
+			System.out.println(user.getEmail());
+		}
+		
+		assertTrue(listUsers.size() > 0);
+	}
+	
+	@Test
+	public void testCount() {
+		long totalUsers = userDAO.count();
+		assertEquals(10, totalUsers);
+	}
+	
 	@AfterClass
 	public static void tearDownClass() {
 		entityManager.close();
