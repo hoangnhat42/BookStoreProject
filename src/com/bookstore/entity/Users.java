@@ -27,18 +27,19 @@ public class Users implements java.io.Serializable {
 	
 	
 
+	public Users(String email, String password, String fullName) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.fullName = fullName;
+	}
+
 	public Users() {
 	}
 
 	public Users(Integer userId, String email, String fullName, String password) {
 		this(email, fullName, password);
 		this.userId = userId;
-	}
-
-	public Users(String email, String fullName, String password) {
-		this.email = email;
-		this.fullName = fullName;
-		this.password = password;
 	}
 
 	@Id
