@@ -36,7 +36,7 @@ public class Users implements java.io.Serializable {
 
 	public Users() {
 	}
-
+	
 	public Users(Integer userId, String email, String fullName, String password) {
 		this(email, fullName, password);
 		this.userId = userId;
