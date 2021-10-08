@@ -5,7 +5,7 @@
 <html>
 <head>
      <meta charset="UTF-8">
-     <title>Manage Reviews - SUAH Bookstore Administration</title>
+     <title>Manage Reviews - Bookstore Administration</title>
      <link rel="stylesheet" href="../css/style.css" >
      <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
      <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
