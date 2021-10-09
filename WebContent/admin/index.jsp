@@ -48,7 +48,7 @@
              </tr>
              </c:forEach>
          </table>
-     </div>
+      </div>
      <div align="center">
          <hr width="60%"/>
          <h2 class="pageheading">Recent Reviews:</h2>
@@ -60,7 +60,7 @@
                 <th>Customer</th>
                 <th>Review On</th>
             </tr>
-            <c:forEach items="listMostRecentReviews" var="review">
+  <%--          <c:forEach items="listMostRecentReviews" var="review">
             <tr>
                 <td>${review.book.title}</td>
                 <td>${review.rating}</td>
@@ -68,9 +68,9 @@
                 <td>${review.customer.fullname}</td>
                 <td>${review.reviewTime}</td>
             </tr>  
-            </c:forEach>
+            </c:forEach> --%>
          </table>
-     </div>
+     </div> 
      <div align="center">
          <hr width="60%"/>
          <h2 class="pageheading">Statistics</h2>

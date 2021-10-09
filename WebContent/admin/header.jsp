@@ -15,7 +15,7 @@
        </a>
     </div>
     <div>
-         Welcome, <c:out value="${sessionScope.useremail}"/> | <a href="Logout">Logout</a>
+         Welcome, <c:out value="${sessionScope.useremail}"/> | <a href="logout">Logout</a>
          <br/><br/>
     </div>
     <div id="headermenu">
