@@ -15,16 +15,17 @@ import com.bookstore.dao.UserDAO;
 import com.bookstore.entity.Users;
 
 public class UserServices {
-	private EntityManagerFactory entityMangerFactory;
 	private EntityManager entityManager;
 	private UserDAO userDAO;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
-	public UserServices(HttpServletRequest request, HttpServletResponse response) {	
+	
+	public UserServices(EntityManager entityManager, 
+			HttpServletRequest request, HttpServletResponse response) {	
+		this.entityManager = entityManager;
 		this.request = request;
 		this.response = response;
-		entityMangerFactory = Persistence.createEntityManagerFactory("BookStoreWebsite");
-		entityManager = entityMangerFactory.createEntityManager();
+		
 		userDAO = new UserDAO(entityManager);		
 	}
 
