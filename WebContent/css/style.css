@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 #headermenu {
-	display: table;
+	display: flex;
+	flex-wrap: wrap
 }
 
 #headermenu div {

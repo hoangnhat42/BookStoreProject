@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SUAH Bookstore Administration</title>
+<title>Bookstore Administration</title>
 </head>
 <body>
 

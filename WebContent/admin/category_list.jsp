@@ -14,7 +14,7 @@
 	<jsp:directive.include file="header.jsp" />
 	<div align="center">
 		<h2 class="pageheading">Category Management</h2>
-		<a href="customer_form.jsp">Create New Category</a>
+		<a href="category_form.jsp">Create New Category</a>
 	</div>
 	
 	<c:if test="${message != null}">

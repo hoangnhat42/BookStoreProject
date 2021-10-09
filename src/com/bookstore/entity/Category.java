@@ -1,5 +1,5 @@
 package com.bookstore.entity;
-// Generated Oct 1, 2021 7:26:20 AM by Hibernate Tools 5.2.11.Final
+
 
 import java.util.HashSet;
 import java.util.Set;

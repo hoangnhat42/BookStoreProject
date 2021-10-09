@@ -2,7 +2,7 @@
 <div class='center'>
 	<div>
 	    <a href="${pageContext.request.contextPath}/">
-		<img src="images/logons.png" />
+		<img src="../images/logons.png" />
 		</a>
 	</div>
 

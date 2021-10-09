@@ -3,11 +3,6 @@ package com.bookstore.dao;
 import static org.junit.Assert.*;
 
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -77,10 +72,10 @@ public class CategoryDAOTest extends BaseDAOTest {
 		
 		assertEquals(6, totalCategories);
 	}
-/*	
+	
 	@Test
 	public void testFindByName() {
-		String name = "Java Core";
+		String name = "Core Java";
 		Category category = categoryDao.findByName(name);
 		
 		assertNotNull(category);
@@ -93,5 +88,5 @@ public class CategoryDAOTest extends BaseDAOTest {
 		
 		assertNull(category);
 	}
-*/
+
 }

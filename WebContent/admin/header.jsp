@@ -1,4 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Customer</title>
+    
+    <link rel="stylesheet" href="../css/style.css" >
+    
+</head>
 <div align="center">
     <div>
        <a href="${pageContext.request.contextPath}/admin/">
@@ -30,7 +39,7 @@
               <img src="../images/customer.png" /><br/> Customers
               </a>
          </div>
-         <div ">
+         <div >
                <a href="list_review">
                <img src="../images/review.png" /><br/> Reviews
                </a>
