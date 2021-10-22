@@ -62,12 +62,13 @@ public class BookDAOTest extends BaseDAOTest{
 		assertTrue(createdBook.getBookId() > 0);
 	}
 	
+	
 	@Test
-	public void testCreate2Book() throws ParseException, IOException {
+	public void testCreate2ndBook() throws ParseException, IOException {
 		Book newBook = new Book();
 		
 		Category category = new Category("Covers Spring");
-		category.setCategoryId(13);
+		category.setCategoryId(11);
 		newBook.setCategory(category);
 		
 		newBook.setTitle("Spring in Action: Covers Spring 4");
@@ -80,7 +81,7 @@ public class BookDAOTest extends BaseDAOTest{
 		Date publishDate = dateFormat.parse("11/28/2014");
 		newBook.setPublishDate(publishDate);
 		
-		String imagePath = "C:\\\\Users\\\\hoang\\\\Documents\\\\workspace\\\\BookStoreWebsite\\\\WebContent\\\\book\\Spring in Action.jpg";
+		String imagePath = "C:\\Users\\hoang\\Documents\\workspace\\BookStoreWebsite\\WebContent\\books\\Spring in Action.jpg";
 		byte[] imageBytes = Files.readAllBytes(Paths.get(imagePath));
 		newBook.setImage(imageBytes);
 		
@@ -90,31 +91,31 @@ public class BookDAOTest extends BaseDAOTest{
 	}
 	
 	@Test
-	public void testUpdateeBook() throws ParseException, IOException {
+	public void testUpdateBook() throws ParseException, IOException {
 		Book existBook = new Book();
-		existBook.setBookId(1);
+		existBook.setBookId(32);
 		
-		Category category = new Category("Java Core");
-		category.setCategoryId(1);
+		Category category = new Category("Java Core Update");
+		category.setCategoryId(11);
 		existBook.setCategory(category);
 		
-		existBook.setTitle("Effective Java (3rd Edition)");
+		existBook.setTitle("Effective Java (5rd Edition)");
 		existBook.setAuthor("Joshua Bloch");
 		existBook.setDescription("New coverage of generics, enums, annotations, autoboxing");
-		existBook.setPrice(40f);
+		existBook.setPrice(44f);
 		existBook.setIsbn("0321356683");
 		
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date publishDate = dateFormat.parse("05/28/2008");
 		existBook.setPublishDate(publishDate);
 		
-		String imagePath = "/Users/xiaxun/Downloads/bookstore\\ website\\ project/books/Effective\\ Java.jpg";
+		String imagePath = "C:\\Users\\hoang\\Documents\\workspace\\BookStoreWebsite\\WebContent\\books\\Spring in Action.jpg";
 		byte[] imageBytes = Files.readAllBytes(Paths.get(imagePath));
 		existBook.setImage(imageBytes);
 		
 		Book updatedBook = bookDao.update(existBook);
 		
-		assertEquals(updatedBook.getTitle(), "Effective Java (3rd Edition");
+		assertEquals(updatedBook.getTitle(), "Effective Java (5rd Edition)");
 	}
 	
 	@Test(expected = EntityNotFoundException.class)
@@ -127,7 +128,7 @@ public class BookDAOTest extends BaseDAOTest{
 	
 	@Test
 	public void testDeleteBookSuccess() {
-		Integer bookId = 1;
+		Integer bookId = 32;
 		bookDao.delete(bookId);
 		
 		assertTrue(true);
@@ -143,7 +144,7 @@ public class BookDAOTest extends BaseDAOTest{
 	
 	@Test
 	public void testGetBookSuccess() {
-		Integer bookId = 2;
+		Integer bookId = 34;
 		Book book = bookDao.get(bookId);
 		
 		assertNotNull(book);
@@ -158,7 +159,7 @@ public class BookDAOTest extends BaseDAOTest{
 		}
 		assertFalse(listBooks.isEmpty());		
 	}
-	/*
+	
 	@Test
 	public void testFindByTitleNotExist() {
 		String title = "Think in Java";
@@ -184,7 +185,7 @@ public class BookDAOTest extends BaseDAOTest{
 		
 		assertEquals(totalBooks, 2);
 	}
-	
+	/*
 	@Test
 	public void testListNewBooks() {
 		List<Book> listNewBooks = bookDao.listNewBooks();
