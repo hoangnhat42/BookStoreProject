@@ -28,14 +28,15 @@
 		</h2>
 	</div>
 
+
 	<div align="center">
-	<c:if test="${book != null}">
+		<c:if test="${book != null}">
 	<form action="update_book" method="post" id="bookForm" enctype="multipart/form-data">
 	<input type="hidden" name="bookId" value="${book.bookId}" />
 	</c:if>
-	<c:if test="${book == null}">
-	<form action="create_book" method="post" id="bookForm" enctype="multipart/form-data">
-	</c:if>
+		<c:if test="${book == null}">
+		<form action="create_book" method="post" id="bookForm" enctype="multipart/form-data">
+		</c:if>
 	
 		<table class="form">
 		    <tr>
@@ -75,7 +76,7 @@
 			<tr>
 				<td align="right">Book Image:</td>
 				<td align="left">
-				    <input type="file" id="bookImage" name="bookImage" size="20" />
+				    <input type="file" id="bookImage" name="bookImage" size="20" /> <br/>
 				    <img id = "thumbnail" alt="Image Preview" style="width:20%; margin-top:10px"
 				      src="data:image/jpg;base64, ${book.base64Image}"
 				    />
