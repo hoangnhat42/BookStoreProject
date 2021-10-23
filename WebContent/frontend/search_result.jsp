@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Result for ${keyword} - ONLINE BOOKSTORE</title>
-<link rel="stylesheet" href="/css/style.css" >
+<link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
 	<jsp:directive.include file="header.jsp"/>

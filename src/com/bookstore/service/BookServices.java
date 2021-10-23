@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.EntityManager;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,19 +21,17 @@ import com.bookstore.entity.Book;
 import com.bookstore.entity.Category;
 
 public class BookServices {
-	private EntityManager entityManager;
 	private BookDAO bookDAO;
 	private CategoryDAO categoryDAO;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	
-	public BookServices(EntityManager entityManager, HttpServletRequest request, HttpServletResponse response) {
+	public BookServices(HttpServletRequest request, HttpServletResponse response) {
 		super();
-		this.entityManager = entityManager;
 		this.request = request;
 		this.response = response;
-		bookDAO = new BookDAO(entityManager);
-		categoryDAO = new CategoryDAO(entityManager);
+		bookDAO = new BookDAO();
+		categoryDAO = new CategoryDAO();
 	}
 	
 	public void listBooks() throws ServletException, IOException{
@@ -173,5 +171,46 @@ public class BookServices {
 		
 		String message = "The book has been deleted successfully.";
 		listBooks(message);
+	}
+
+	public void listBooksByCategory() throws ServletException, IOException {
+		int categoryId = Integer.parseInt(request.getParameter("id"));
+		List<Book> listBooks = bookDAO.listByCategory(categoryId);
+		Category category = categoryDAO.get(categoryId);
+		
+		request.setAttribute("listBooks", listBooks);
+		request.setAttribute("category", category);
+		
+		String listPage = "frontend/books_list_by_category.jsp";
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(listPage);
+		requestDispatcher.forward(request, response);
+	}
+
+	public void viewBookDetail() throws ServletException, IOException {
+		Integer bookId = Integer.parseInt(request.getParameter("id"));
+		Book book = bookDAO.get(bookId);
+		
+		request.setAttribute("book", book);
+		
+		String detailPage = "frontend/book_detail.jsp";
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(detailPage);
+		requestDispatcher.forward(request, response);
+	}
+
+	public void search() throws ServletException, IOException {
+		String keyword = request.getParameter("keyword");
+		List<Book> result = null;
+		if (keyword.equals("")) {
+			result = bookDAO.listAll();
+		} else {
+			result = bookDAO.search(keyword);
+		}
+		
+		request.setAttribute("keyword", keyword);
+		request.setAttribute("result", result);
+		
+		String resultPage = "frontend/search_result.jsp";
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(resultPage);
+		requestDispatcher.forward(request, response);
 	}
 }

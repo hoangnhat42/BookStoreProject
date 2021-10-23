@@ -3,7 +3,6 @@ package com.bookstore.dao;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DateFormat;
@@ -21,18 +20,17 @@ import org.junit.Test;
 import com.bookstore.entity.Book;
 import com.bookstore.entity.Category;
 
-public class BookDAOTest extends BaseDAOTest{
+public class BookDAOTest {
 	private static BookDAO bookDao;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		BaseDAOTest.setupBeforeClass();
-		bookDao = new BookDAO(entityManager);
+		bookDao = new BookDAO();
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		BaseDAOTest.tearDownAfterClass();
+		bookDao.close();
 	}
 
 	@Test
@@ -151,7 +149,7 @@ public class BookDAOTest extends BaseDAOTest{
 	} 
 	
 	@Test
-	public void testLitAll() {
+	public void testListAll() {
 		List<Book> listBooks = bookDao.listAll();
 		
 		for (Book aBook : listBooks) {
@@ -183,9 +181,18 @@ public class BookDAOTest extends BaseDAOTest{
 	public void testCount() {
 		long totalBooks = bookDao.count();
 		
-		assertEquals(totalBooks, 2);
+		assertEquals(totalBooks, 3);
 	}
-	/*
+	
+	@Test
+	public void testListByCategory() {
+		int categoryId = 11;
+		
+		List<Book> listBooks = bookDao.listByCategory(categoryId);
+		
+		assertTrue(listBooks.size() > 0);
+	}
+	
 	@Test
 	public void testListNewBooks() {
 		List<Book> listNewBooks = bookDao.listNewBooks();
@@ -195,14 +202,7 @@ public class BookDAOTest extends BaseDAOTest{
 		assertEquals(listNewBooks.size(), 4);
 	}
 	
-	@Test
-	public void testListByCategory() {
-		int categoryId = 1;
-		
-		List<Book> listBooks = bookDao.listByCategory(categoryId);
-		
-		assertTrue(listBooks.size() > 0);
-	}
+	
 	
 	@Test
 	public void testSearchBookInTitle() {
@@ -213,7 +213,7 @@ public class BookDAOTest extends BaseDAOTest{
 			System.out.println(aBook.getTitle());
 		}
 		
-		assertEquals(7, result.size());
+		assertEquals(3, result.size());
 	}
 	
 	@Test
@@ -225,12 +225,12 @@ public class BookDAOTest extends BaseDAOTest{
 			System.out.println(aBook.getTitle());
 		}
 		
-		assertEquals(2, result.size());
+		assertEquals(1, result.size());
 	}
 	
 	@Test
 	public void testSearchBookInDescription() {
-		String keyword = "The big picture";
+		String keyword = "New coverage of generics";
 		List<Book> result = bookDao.search(keyword);
 		
 		for (Book aBook : result) {
@@ -239,7 +239,7 @@ public class BookDAOTest extends BaseDAOTest{
 		
 		assertEquals(1, result.size());
 	}
-	
+	/*
 	@Test
 	public void testCountByCategory() {
 		int categoryId = 4;

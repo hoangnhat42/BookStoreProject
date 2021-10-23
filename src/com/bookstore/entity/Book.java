@@ -27,7 +27,13 @@ import org.hibernate.annotations.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b"),
 	@NamedQuery(name = "Book.findByTitle", query = "SELECT b FROM Book b WHERE b.title = :title"),
-	@NamedQuery(name = "Book.countAll", query = "SELECT COUNT(*) FROM Book b")
+	@NamedQuery(name = "Book.countAll", query = "SELECT COUNT(*) FROM Book b"),
+	@NamedQuery(name = "Book.findByCategory", query = "SELECT b FROM Book b JOIN " 
+			+ "Category c ON b.category.categoryId = c.categoryId AND c.categoryId = :catId"),
+	@NamedQuery(name = "Book.listNew", query = "SELECT b FROM Book b ORDER BY b.publishDate DESC"),
+	@NamedQuery(name = "Book.search", query = "SELECT b FROM Book b WHERE b.title Like '%' || :keyword || '%'"
+		       + "OR b.author LIKE '%' || :keyword || '%'"
+				+ "OR b.description LIKE '%' || :keyword || '%'")
 })
 public class Book implements java.io.Serializable {
 
@@ -88,7 +94,7 @@ public class Book implements java.io.Serializable {
 		this.bookId = bookId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id", nullable = false)
 	public Category getCategory() {
 		return this.category;

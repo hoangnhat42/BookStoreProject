@@ -3,7 +3,7 @@ package com.bookstore.service;
 import java.io.IOException;
 import java.util.List;
 
-import javax.persistence.EntityManager;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -18,13 +18,12 @@ public class UserServices {
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	
-	public UserServices(EntityManager entityManager, 
-			HttpServletRequest request, HttpServletResponse response) {	
+	public UserServices(HttpServletRequest request, HttpServletResponse response) {	
 
 		this.request = request;
 		this.response = response;
 		
-		userDAO = new UserDAO(entityManager);		
+		userDAO = new UserDAO();		
 	}
 
 	public void listUser() 

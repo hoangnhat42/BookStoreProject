@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Books in ${category.name} - ONLINE BOOKSTORE</title>
-<link rel="stylesheet" href="/css/style.css" >
+<link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
 	<jsp:directive.include file="header.jsp"/>
@@ -27,9 +27,7 @@
                   <b>${book.title}</b>
                </a>
             </div>
-            <div>
-                <jsp:directive.include file="book_rating.jsp" />
-            </div>
+            
             <div><i>by ${book.author}</i></div>
             <div><b>$${book.price}</b></div>
          </div>
