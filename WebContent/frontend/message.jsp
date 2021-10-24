@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SUAH Bookstore - Online Bookstore</title>
+<title>Bookstore - Online Bookstore</title>
 <link rel="stylesheet" href="css/style.css" >
 </head>
 <body>

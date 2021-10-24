@@ -27,6 +27,7 @@ import org.hibernate.annotations.NamedQuery;
 })
 public class Customer implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Integer customerId;
 	private String email;
 	private String fullname;

@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.bookstore.entity.Category;
 
+
 public class CategoryDAOTest {
 	
 	private static CategoryDAO categoryDao;
@@ -87,5 +88,7 @@ public class CategoryDAOTest {
 		
 		assertNull(category);
 	}
+	
+
 
 }

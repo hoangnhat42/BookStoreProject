@@ -1,6 +1,7 @@
 package com.bookstore.controller.admin;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +16,14 @@ public class AdminLoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-        UserServices userServices = new UserServices(request, response);
+        UserServices userServices = new UserServices( request, response);
         userServices.login();
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+        doPost(request, response);
+        
 	}
 
 }

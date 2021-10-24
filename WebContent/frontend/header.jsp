@@ -14,7 +14,7 @@
 			
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			 <c:if test="${loggedCustomer == null}">
-			     <a href="Login">Sign In</a> 
+			     <a href="login">Sign In</a> 
 			     <a href="register">Register</a> 
 			 </c:if>
 			 <c:if test="${loggedCustomer != null}">
