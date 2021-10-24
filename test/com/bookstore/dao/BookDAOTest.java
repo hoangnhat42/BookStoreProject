@@ -239,15 +239,15 @@ public class BookDAOTest {
 		
 		assertEquals(1, result.size());
 	}
-	/*
+	
 	@Test
 	public void testCountByCategory() {
-		int categoryId = 4;
+		int categoryId = 11;
 		long numOfBooks = bookDao.countByCategory(categoryId);
 		
-		assertEquals(numOfBooks, 5);
+		assertEquals(numOfBooks, 2);
 	}
-	
+	/*
 	@Test
 	public void testListBestSellingBooks() {
 		List<Book> topBestSellingBooks = bookDao.listBestSellingBooks();

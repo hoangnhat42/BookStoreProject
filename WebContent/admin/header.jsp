@@ -11,7 +11,7 @@
 <div align="center">
     <div>
        <a href="${pageContext.request.contextPath}/admin/">
-        <img src="images/logons.jpg"/>
+        <img src="../images/logons.jpg"/>
        </a>
     </div>
     <div>
