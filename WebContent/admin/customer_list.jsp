@@ -14,7 +14,7 @@
 	<jsp:directive.include file="header.jsp" />
 	<div align="center">
 		<h2 class="pageheading">Customers Management</h2>
-		<a href="new_customer">Create New Customer</a>
+		<a href="customer_form.jsp">Create New Customer</a>
 	</div>
 	
 	<c:if test="${message != null}">
