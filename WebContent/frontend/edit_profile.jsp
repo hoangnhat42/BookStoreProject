@@ -1,61 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Register as a Customer</title>
-    
+     <meta charset="UTF-8">
+    <title>Edit my profile</title>
     <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
+    
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-    
+     
 </head>
 <body>
 	<jsp:directive.include file="header.jsp" />
 	<div align="center">
 		<h2 class="pageheading">
-		Edit My Profile
+		Edit my profile
 		</h2>
 	</div>
 
+
 	<div align="center">
-	
-	    <form action="update_profile" method="post" id="customerForm">
-	
+		<form action="update_profile" method="post" id="customerForm">
 		<table class="form">
+		   
 			<tr>
 				<td align="right">E-mail:</td>
 				<td align="left"><b>${loggedCustomer.email}</b> (Cannot be changed)</td>
 			</tr>
 			<tr>
-				<td align="right">First Name:</td>
-				<td align="left"><input type="text" id="firstName" name="firstName" size="45" value="${loggedCustomer.firstName}" /></td>
-			</tr>
-			<tr>
-				<td align="right">Last Name:</td>
-				<td align="left"><input type="text" id="lastName" name="lastName" size="45" value="${loggedCustomer.lastName}" /></td>
+				<td align="right">Full Name:</td>
+				<td align="left"><input type="text" id="fullName" name="fullName" size="45" value="${loggedCustomer.fullname}" /></td>
 			</tr>
 			<tr>
 				<td align="right">Phone Number:</td>
 				<td align="left"><input type="text" id="phone" name="phone" size="45" value="${loggedCustomer.phone}"/></td>
 			</tr>
 			<tr>
-				<td align="right">Address Line1:</td>
-				<td align="left"><input type="text" id="address1" name="address1" size="45" value="${loggedCustomer.addressLine1}"/></td>
-			</tr>
-			<tr>
-				<td align="right">Address Line2:</td>
-				<td align="left"><input type="text" id="address2" name="address2" size="45" value="${loggedCustomer.addressLine2}"/></td>
+				<td align="right">Address:</td>
+				<td align="left"><input type="text" id="address" name="address" size="45" value="${loggedCustomer.address}"/></td>
 			</tr>
 			<tr>
 				<td align="right">City:</td>
 				<td align="left"><input type="text" id="city" name="city" size="45" value="${loggedCustomer.city}"/></td>
-			</tr>
-			<tr>
-				<td align="right">State:</td>
-				<td align="left"><input type="text" id="state" name="state" size="45" value="${loggedCustomer.state}"/></td>
 			</tr>
 			<tr>
 				<td align="right">Zip Code:</td>
@@ -63,12 +51,7 @@
 			</tr>
 			<tr>
 				<td align="right">Country:</td>
-				<td align="left"><select name="country" id="country">
-				    <c:forEach items="${mapCountries}" var="country">
-				       <option value="${country.value}"<c:if test="${loggedCustomer.country eq country.value}">selected='selected'</c:if>>${country.key}</option>
-				    </c:forEach>
-				    </select>
-				</td>
+				<td align="left"><input type="text" id="country" name="country" size="45" value="${loggedCustomer.country}"/></td>
 			</tr>
 			<tr>
 			    <td colspan="2" align="center">
@@ -81,7 +64,7 @@
 			</tr>
 			<tr>
 				<td align="right">Confirm Password:</td>
-				<td align="left"><input type="password" id="confirmpassword" name="confirmpassword" size="45"/></td>
+				<td align="left"><input type="password" id="confirmPassword" name="confirmPassword" size="45"/></td>
 			</tr>
 			<tr><td>&nbsp;</td></tr>
 			<tr>
@@ -96,44 +79,43 @@
 
 
 	<jsp:directive.include file="footer.jsp" />
+	
 </body>
 <script type="text/javascript">
 
 $(document).ready(function(){
 	$("#customerForm").validate({
-		rules: {
-			
+		rules: {	
 			email: {
-				required: true;
-	            email: true
+				required: true,
+				email: true,
 			},
 			fullName: "required",
-			ConfirmPassword:{
+			confirmPassword: {
 				equalTo: "#password"
-				
-			},
+				},
 			phone: "required",
 			address: "required",
 			city: "required",
 			zipCode: "required",
-			country: "required",
+			country: "required"			
 		},
 		
-		messages: {
-			
+		messages: {	
 			email: {
-				required: "Please enter e-mail address",
-				email: "Please enter a valid e-mail address"
+				required: "Please enter email address",
+				email: "Please enter a valid email address",
 			},
 			fullName: "Please enter full name",
-			ConfirmPassword: {
-				equalTo: "Confrim password does not match password"
-			},
-			phone: "Please enter phone number",
+			
+			confirmPassword: {
+				equalTo: "Confirm password does not match password"
+			},	
+			phone: "Please enter phone",
 			address: "Please enter address",
 			city: "Please enter city",
 			zipCode: "Please enter zip code",
-			country: "Please enter country",
+			country: "Please enter country"
 		}
 	});
 	

@@ -42,8 +42,8 @@ public class CustomerLoginFilter implements Filter {
 		System.out.println("Path: " + path);
 		System.out.println("loggedIn: " + loggedIn);
 		
-		//String requestURL = httpRequest.getRequestURL().toString();
-		if (!loggedIn && path.startsWith("/view_profile")) {
+		String requestURL = httpRequest.getRequestURL().toString();
+		if (!loggedIn && isLoginRequired(requestURL)) {
 			String loginPage = "frontend/login.jsp";
 			RequestDispatcher dispatcher = httpRequest.getRequestDispatcher(loginPage);
 			dispatcher.forward(request, response);
@@ -52,6 +52,15 @@ public class CustomerLoginFilter implements Filter {
 		}
 	}
 	
+	public boolean isLoginRequired(String requestURL) {
+		for (String loginRequiredURL : loginRequiredURLs) {
+			if (requestURL.contains(loginRequiredURL)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
 	}
