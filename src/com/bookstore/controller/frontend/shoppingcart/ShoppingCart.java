@@ -53,9 +53,9 @@ public class ShoppingCart {
 	
 	public void updateCart(int[] bookIds, int[] quantities) {
 		for (int i = 0; i < bookIds.length; i++) {
-			//Book key = new Book(bookIds[i]);
+			Book key = new Book(bookIds[i]);
 			Integer value = quantities[i];
-		//	cart.put(key, value);
+			cart.put(key, value);
 		}
 	}
 	
