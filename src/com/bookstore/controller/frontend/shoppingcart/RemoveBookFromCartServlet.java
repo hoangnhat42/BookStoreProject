@@ -25,7 +25,7 @@ public class RemoveBookFromCartServlet extends HttpServlet {
 		Object cartObject = request.getSession().getAttribute("cart");
 		ShoppingCart shoppingCart = (ShoppingCart) cartObject;
 	
-		//shoppingCart.removeItem(new Book(bookId));
+		shoppingCart.removeItem(new Book(bookId));
 		
 		String cartPage = request.getContextPath().concat("/view_cart");
 		response.sendRedirect(cartPage);
