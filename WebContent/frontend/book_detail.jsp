@@ -24,6 +24,10 @@
                 <td rowspan="2">
                     <img class="book-large" src="data:image/jpg;base64, ${book.base64Image}" />
                 </td>
+                <td valign="top" align="left">
+                	 <jsp:directive.include file="book_rating.jsp" /> &nbsp;&nbsp;
+                    <a href="#reviews">${fn:length(book.reviews)} Reviews</a>
+                </td>
                 
                 <td valign="top" rowspan="2" width="20%">
                     <h2>$${book.price}</h2>
@@ -43,7 +47,34 @@
                    <button id="buttonWriteReview">Write a Customer Review</button>
                 </td>
             </tr>
-            
+            <tr>
+               <td colspan="3" align="left">
+                     <table class="normal">
+                         <c:forEach items="${book.reviews}" var="review">
+                             <tr>
+                                  <td> 
+                                      <c:forTokens items="${review.stars}" delims="," var="star">
+                                           <c:if test="${star eq 'on'}">
+                                                <img src="images/rating_on.png"/>
+                                           </c:if>
+                                           <c:if test="${star eq 'off'}">
+                                                <img src="images/rating_off.png"/>
+                                           </c:if>
+                                      </c:forTokens>
+                                      - <b>${review.headline}</b>
+                                  </td>
+                             </tr>
+                             <tr>
+                                  <td>by ${review.customer.fullname} on ${review.reviewTime}</td>
+                             </tr>
+                             <tr>
+                                  <td><i>${review.comment}</i></td>
+                             </tr>
+                              <tr><td>&nbsp;</td></tr>
+                         </c:forEach>
+                     </table>
+               </td>
+            </tr>
          
             
          </table>

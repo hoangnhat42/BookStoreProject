@@ -32,16 +32,16 @@ public class ReviewDAOTest {
 	public void testCreateReview() {
 		Review review = new Review();
 		Book book = new Book();
-		book.setBookId(34);
+		book.setBookId(40);
 		
 		Customer customer = new Customer();
-		customer.setCustomerId(19);
+		customer.setCustomerId(18);
 		
 		review.setBook(book);
 		review.setCustomer(customer);
 		
 		review.setHeadline("Good!");
-		review.setRating(5);
+		review.setRating(2);
 		review.setComment("I would like to recommend it to you all");
 		
 		Review savedReview = reviewDao.create(review);
