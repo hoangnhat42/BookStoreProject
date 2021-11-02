@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-import org.junit.After;
+
 import org.junit.AfterClass;
-import org.junit.Before;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -40,9 +40,9 @@ public class ReviewDAOTest {
 		review.setBook(book);
 		review.setCustomer(customer);
 		
-		review.setHeadline("This is a very good book!");
+		review.setHeadline("Good!");
 		review.setRating(5);
-		review.setComment("This is one of the best books I have ever read. I would like to recommend it to you all");
+		review.setComment("I would like to recommend it to you all");
 		
 		Review savedReview = reviewDao.create(review);
 		
