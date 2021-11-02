@@ -1,0 +1,26 @@
+Customer Reviews for: Pro Spring 5
+===================================
+
+Customer: Mike
+Rating: 3
+Headline: Topic coverage and writing style weren't to my liking.
+Comment: 
+It covers a lot of topics but doesn't really go in depth the way I like. 
+Maybe just a personal preference as to the way it was written. 
+I also purchased the Spring 5 Recipes from the same publisher and found it to be much more useful
+
+
+Customer: Katherin
+Rating: 3
+Headline: Great content, horrible formatting
+Comment: 
+Great in depth coverage of spring. Unfortunately they don't seem to have put any effort into formatting the text for the kindle version so it is difficult to read.
+
+
+
+Customer: Katherin
+Rating: 5
+Headline: it's the best book to get hands on experience on Spring 5
+Comment: 
+In my opinion, it's the best book to get hands on experience on Spring 5.
+The book is completely updated with respect to Pro Spring 4 and examines all aspects of one Enterprise Application, named Singers.

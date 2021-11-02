@@ -39,7 +39,6 @@ public class CommonFilter implements Filter {
 			request.setAttribute("listCategory", listCategory);
 			
 		}
-	
 		
 		chain.doFilter(request, response);
 	}

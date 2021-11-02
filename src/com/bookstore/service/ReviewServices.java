@@ -81,6 +81,8 @@ public class ReviewServices {
 		listAllReview(message);
 	}
 
+	
+	
 	public void showReviewForm() throws ServletException, IOException {
 		Integer bookId = Integer.parseInt(request.getParameter("book_id"));
 		BookDAO bookDao = new BookDAO();
@@ -103,6 +105,7 @@ public class ReviewServices {
 		dispatcher.forward(request, response);
 		
 	}
+
 
 	public void submitReview() throws ServletException, IOException {
 		Integer bookId = Integer.parseInt(request.getParameter("book_id"));

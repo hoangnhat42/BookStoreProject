@@ -34,7 +34,7 @@ public class ReviewDAO extends JpaDAO<Review> implements GenericDAO<Review> {
 		return super.countWithNamedQuery("Review.countAll");
 	}
 	
-	public Review findByCustomerAndBook(int customerId, int bookId) {
+	public Review findByCustomerAndBook(Integer customerId, Integer bookId) {
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("customerId", customerId);
 		parameters.put("bookId", bookId);

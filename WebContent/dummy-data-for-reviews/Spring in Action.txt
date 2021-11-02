@@ -1,0 +1,35 @@
+Customer Reviews for: Spring in Action
+=========================================
+
+Customer: David
+Rating: 5
+Headline: Well written book
+Comment: 
+Easy to read in a way that helps me understand the nuts and bolts of Spring. 
+I'm a computer programmer with experience in almost all areas of business applications so it's good to read about new technology (well new to me anyway).
+
+
+Customer: Mike
+Rating: 5
+Headline: Five Stars
+Comment:
+Great book
+
+
+Customer: Jane Billy
+Rating: 4
+Headline: Best Spring book available, with good coverage of Spring 4
+Comment: 
+Compared to "Beginning Spring" by Mert Caliskan, this is a MUCH better book. 
+The examples are more substantial, and the coverage of how to go about building enterprise class applications with Spring is far more substantial.
+
+
+Customer: Rose
+Rating: 1
+Headline: Not for those who want to lean spring
+Comment: 
+Complete Disappointment:
+After searching for weeks for a nice book for learning spring, 
+I somehow decided to buy this one, mainly due to 100,000 copies being sold. 
+I have completed two parts which covers spring core and spring AOP and I am appalled by the content. 
+It is neither engaging nor comprehensive. 
