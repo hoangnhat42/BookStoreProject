@@ -14,8 +14,20 @@
 		        <td>${order.orderDate}</td>
 		    </tr>
 		    <tr>
-		        <td><b>Recipient Method: </b></td>
-		        <td>${order.recipientMethod}</td>
+		        <td><b>Recipient Name: </b></td>
+		        <td>${order.recipientName}</td>
+		    </tr>
+		    <tr>
+		        <td><b>Recipient Phone: </b></td>
+		        <td>${order.recipientPhone}</td>
+		    </tr>
+		    <tr>
+		        <td><b>Recipient method: </b></td>
+		        <td>${order.paymentMethod}</td>
+		    </tr>
+		      <tr>
+		        <td><b>Shipping Address: </b></td>
+		        <td>${order.shippingAddress}</td>
 		    </tr>
 		    <tr>
 		        <td><b>Book Copies: </b></td>
@@ -30,39 +42,33 @@
 		<table>
 		     <tr>
 		        <td><b>First Name: </b></td>
-		        <td>${order.firstname}</td>
+		        
 		    </tr>
-		     <tr>
-		        <td><b>Last Name: </b></td>
-		        <td>${order.lastname}</td>
-		    </tr>
+		    
 		     <tr>
 		        <td><b>Phone: </b></td>
-		        <td>${order.phone}</td>
+		      
 		    </tr>
 		     <tr>
 		        <td><b>Address Line1: </b></td>
-		        <td>${order.addressLine1}</td>
+		       
 		    </tr>
-		     <tr>
-		        <td><b>Address Line2: </b></td>
-		        <td>${order.addressLine2}</td>
-		    </tr>
+		    
 		    <tr>
 		        <td><b>City: </b></td>
-		        <td>${order.city}</td>
+		        
 		    </tr>
 		     <tr>
 		        <td><b>State: </b></td>
-		        <td>${order.state}</td>
+		        
 		    </tr>
 		    <tr>
 		        <td><b>Country: </b></td>
-		        <td>${order.countryName}</td>
+		        
 		    </tr>
 		    <tr>
 		        <td><b>Zipcode: </b></td>
-		        <td>${order.zipcode}</td>
+		        
 		    </tr>
 		</table>
 	</div>
@@ -85,17 +91,22 @@
 	               ${orderDetail.book.title}
 	           </td>
 	           <td>${orderDetail.book.author}</td>
+	           
 	           <td><fmt:formatNumber value="${orderDetail.book.price}" type="currency"/></td>
 	           <td>${orderDetail.quantity}</td>
-	           <td><fmt:formatNumber value="${orderDetail.subtotal}" type="currency"/></td>
+	           <td><fmt:formatNumber value ="${orderDetail.subtotal}" type = "currency"/></td>
+	           
 	       </tr>
 	       </c:forEach>
-	       <tr>
-	           <td colspan="6" align="right">
-	              <p>Subtotal: <fmt:formatNumber value="${order.subtotal}" type="currency"/></p>
-	              <p>Tax: <fmt:formatNumber value="${order.tax}" type="currency"/></p>
-	              <p>Shipping Fee: <fmt:formatNumber value="${order.shippingFee}" type="currency"/></p>
-	              <p>TOTAL:<fmt:formatNumber value="${order.total}" type="currency"/></p>
+	        <tr>
+	           <td colspan="4" align="right">
+	           		<b><i>TOTAL:</i></b>
+	           </td>
+	           <td>
+	           <b>${order.bookCopies}</b>
+	           </td>
+	           <td> 
+	           <b><fmt:formatNumber value="${order.total}" type="currency"/></b>
 	           </td>
 	       </tr>
 	   </table>

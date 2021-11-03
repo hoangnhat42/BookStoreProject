@@ -48,7 +48,7 @@
                             <img class="book-small" src="data:image/jpg;base64, ${item.key.base64Image}" />
                             </td>
                             <td><span id="book-title">${item.key.title}</span></td>
-                            <td>$item.key.author}</td>
+                            <td>${item.key.author}</td>
                              <td><fmt:formatNumber value="${item.key.price}" type="currency" /></td>
                             <td>
                                <input type="text" name="quantity${status.index + 1}" value="${item.value}" size="5" readonly="readonly"/>
@@ -71,45 +71,30 @@
                     <table>
                         <tr>
                            <td>First Name:</td>
-                           <td><input type="text" name="firstname" value="${loggedCustomer.firstname}"/></td>
+                           <td><input type="text" name="fullname" value="${loggedCustomer.fullname}"/></td>
                         </tr>
-                        <tr>
-                           <td>Last Name:</td>
-                           <td><input type="text" name="lastname" value="${loggedCustomer.lastname}"/></td>
-                        </tr>
+                        
                         <tr>
                            <td>Phone:</td>
                            <td><input type="text" name="phone" value="${loggedCustomer.phone}"/></td>
                         </tr>
                         <tr>
                            <td>Address Line 1:</td>
-                           <td><input type="text" name="address1" value="${loggedCustomer.addressLine1}"/></td>
+                           <td><input type="text" name="address" value="${loggedCustomer.address}"/></td>
                         </tr>
-                        <tr>
-                           <td>Address Line 2:</td>
-                           <td><input type="text" name="address2" value="${loggedCustomer.addressLine2}"/></td>
-                        </tr>
+                        
                         <tr>
                            <td>City:</td>
                            <td><input type="text" name="city" value="${loggedCustomer.city}"/></td>
                         </tr>
-                        <tr>
-                           <td>State:</td>
-                           <td><input type="text" name="state" value="${loggedCustomer.state}"/></td>
-                        </tr>
+                       
                         <tr>
                            <td>Zip Code:</td>
                            <td><input type="text" name="zipcode" value="${loggedCustomer.zipcode}"/></td>
                         </tr>
                          <tr>
                            <td>Country:</td>
-                           <td>
-                           <select name="country" id="country">
-				             <c:forEach items="${mapCountries}" var="country">
-				                <option value="${country.value}"<c:if test="${loggedCustomer.country eq country.value}">selected='selected'</c:if>>${country.key}</option>
-				             </c:forEach>
-				           </select>
-                           </td>
+                       
                         </tr>
                     </table>
                     <div>

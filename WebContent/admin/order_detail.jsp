@@ -6,7 +6,7 @@
 <html>
 <head>
      <meta charset="UTF-8">
-     <title>Order Details - SUAH Bookstore Administration</title>
+     <title>Order Details - Bookstore Administration</title>
      <link rel="stylesheet" href="../css/style.css" >
      <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 </head>

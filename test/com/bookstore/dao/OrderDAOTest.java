@@ -35,7 +35,7 @@ public class OrderDAOTest {
 	public void testCreateBookOrder() {
 		BookOrder order = new BookOrder();
 		Customer customer = new Customer();
-		customer.setCustomerId(12);
+		customer.setCustomerId(15);
 		
 		order.setCustomer(customer);
 		order.setRecipientName("Phan Thanh Sang");
@@ -80,8 +80,13 @@ public class OrderDAOTest {
 	}
 
 	@Test
-	public void testDeleteObject() {
-		fail("Not yet implemented");
+	public void testDeleteOrder() {
+		int orderId = 26;
+		orderDAO.delete(orderId);
+		
+		BookOrder order = orderDAO.get(orderId);
+		
+		assertNull(order);
 	}
 
 	@Test
@@ -156,7 +161,8 @@ public class OrderDAOTest {
 	
 	@Test
 	public void testCount() {
-		fail("Not yet implemented");
+		long totalOrders = orderDAO.count();
+		assertEquals(3, totalOrders);
 	}
 
 	@Test
