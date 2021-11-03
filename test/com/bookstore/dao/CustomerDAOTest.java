@@ -26,12 +26,15 @@ public class CustomerDAOTest {
 	@Test
 	public void testCreateCustomer() {
 		Customer customer = new Customer();
-		customer.setEmail("billy1@gmail.com");
-		customer.setFullname("Billy");
+		customer.setEmail("sang123@gmail.com");
+		customer.setFirstname("Quin");
+		customer.setLastname("Gold");
 		customer.setCity("Evanston");
+		customer.setState("Illinous");
 		customer.setCountry("United States");
-		customer.setAddress("100 North Avenue");
-		customer.setPassword("pass100tomword");
+		customer.setAddressLine1("100 North Avenue");
+		customer.setAddressLine2("Apt 231");
+		customer.setPassword("123");
 		customer.setPhone("18001890");
 		customer.setZipcode("300100");
 		
@@ -41,7 +44,7 @@ public class CustomerDAOTest {
 
 	@Test
 	public void testGet() {
-		Integer customerId = 11;
+		Integer customerId = 23;
 		Customer customer = customerDao.get(customerId);
 		
 		assertNotNull(customer);
@@ -49,17 +52,17 @@ public class CustomerDAOTest {
 
 	@Test
 	public void testUpdateCustomer() {
-		Customer customer = customerDao.get(11);
+		Customer customer = customerDao.get(1);
 		String fullName = "Tommy";
-		customer.setFullname(fullName);
+		customer.setFirstname(fullName);
 		
 		Customer updatedCustomer = customerDao.update(customer);
-		assertTrue(updatedCustomer.getFullname().equals(fullName));
+		assertTrue(updatedCustomer.getFirstname().equals(fullName));
 	}
 
 	@Test
 	public void testDeleteCustomer() {
-		Integer customerId = 11;
+		Integer customerId = 22;
 		customerDao.delete(customerId);
 		Customer customer = customerDao.get(11);
 		assertNull(customer);

@@ -48,7 +48,7 @@
              </tr>
              </c:forEach>
          </table>
-      </div>
+     </div>
      <div align="center">
          <hr width="60%"/>
          <h2 class="pageheading">Recent Reviews:</h2>
@@ -68,9 +68,9 @@
                 <td>${review.customer.fullname}</td>
                 <td>${review.reviewTime}</td>
             </tr>  
-            </c:forEach> 
+            </c:forEach>
          </table>
-     </div> 
+     </div>
      <div align="center">
          <hr width="60%"/>
          <h2 class="pageheading">Statistics</h2>

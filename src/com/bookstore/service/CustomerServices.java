@@ -65,11 +65,14 @@ public class CustomerServices {
 	
 	private void updateCustomerFieldsFromForm(Customer customer) {
 		String email = request.getParameter("email");
-		String fullName = request.getParameter("fullName");
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
 		String password = request.getParameter("password");
 		String phone = request.getParameter("phone");
-		String address = request.getParameter("address");
+		String addressLine1 = request.getParameter("address1");
+		String addressLine2 = request.getParameter("address2");
 		String city = request.getParameter("city");
+		String state = request.getParameter("state");
 		String zipCode = request.getParameter("zipCode");
 		String country = request.getParameter("country");
 		
@@ -77,15 +80,18 @@ public class CustomerServices {
 			customer.setEmail(email);
 		}
 		
-		
-		customer.setFullname(fullName);
+		customer.setFirstname(firstName);
+		customer.setLastname(lastName);
 		
 		if (password != null && !password.equals("")) {
 			customer.setPassword(password);
 		}
+		
 		customer.setPhone(phone);
-		customer.setAddress(address);
+		customer.setAddressLine1(addressLine1);
+		customer.setAddressLine2(addressLine2);
 		customer.setCity(city);
+		customer.setState(state);
 		customer.setZipcode(zipCode);
 		customer.setCountry(country);
 		
@@ -213,6 +219,13 @@ public class CustomerServices {
 		updateCustomerFieldsFromForm(customer);
 		customerDAO.update(customer);
 		showCustomerProfile();
+	}
+
+	public void newCustomer() throws ServletException, IOException {
+		CommonUtility.generateCountryList(request);
+		
+		String customerForm = "customer_form.jsp";
+		request.getRequestDispatcher(customerForm).forward(request, response);
 	}
 	
 }

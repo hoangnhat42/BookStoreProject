@@ -14,7 +14,7 @@
 	<jsp:directive.include file="header.jsp" />
 	<div align="center">
 		<h2 class="pageheading">Customers Management</h2>
-		<a href="customer_form.jsp">Create New Customer</a>
+		<a href="new_customer">Create New Customer</a>
 	</div>
 	
 	<c:if test="${message != null}">
@@ -29,8 +29,8 @@
 				<th>Index</th>
 				<th>ID</th>
 				<th>E-mail</th>
-				<th>Full Name</th>
-		
+				<th>First Name</th>
+				<th>Last Name</th>
 				<th>City</th>
 				<th>Country</th>
 				<th>Registered Date</th>
@@ -41,10 +41,10 @@
 					<td>${status.index + 1}</td>
 					<td>${customer.customerId}</td>
 					<td>${customer.email}</td>
-					<td>${customer.fullname}</td>
-		
+					<td>${customer.firstname}</td>
+					<td>${customer.lastname}</td>
 					<td>${customer.city}</td>
-					<td>${customer.country}</td>
+					<td>${customer.countryName}</td>
 					<td>${customer.registerDate}</td>
 					<td>
 					  <a href="edit_customer?id=${customer.customerId}">Edit</a> &nbsp; 
@@ -62,7 +62,7 @@
 	    $(document).ready(function(){
 	    	$(".deleteLink").each(function(){
 	    		$(this).on("click", function(){
-	    			customerId = $(this).attr("id");
+	    			userId = $(this).attr("id");
 	    			if ( confirm("Are you sure you want to delete the customer with ID " + customerId + " ?")){
 	    	    		window.location = "delete_customer?id=" + customerId;
 	    	    	}
