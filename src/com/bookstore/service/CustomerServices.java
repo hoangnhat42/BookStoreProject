@@ -1,12 +1,7 @@
 package com.bookstore.service;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.TreeMap;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -124,7 +119,7 @@ public class CustomerServices {
 		Customer customer = customerDAO.get(customerId);
 		
 		request.setAttribute("customer", customer);
-		
+		CommonUtility.generateCountryList(request);
 	
 		String editPage = "customer_form.jsp";
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(editPage);
@@ -161,6 +156,7 @@ public class CustomerServices {
 	}
 
 	public void ShowCustomerRegisterForm() throws ServletException, IOException {
+		CommonUtility.generateCountryList(request);
 		String registerForm = "frontend/register_form.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(registerForm);
 		dispatcher.forward(request, response);
@@ -208,7 +204,7 @@ public class CustomerServices {
 
 	public void showCustomerProfileEditForm() throws ServletException, IOException {
 		
-		
+		CommonUtility.generateCountryList(request);
 		String editPage = "frontend/edit_profile.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(editPage);
 		dispatcher.forward(request, response);

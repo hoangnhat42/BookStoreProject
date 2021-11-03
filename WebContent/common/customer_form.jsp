@@ -7,11 +7,11 @@
 			</tr>
 			<tr>
 				<td align="right">First Name:</td>
-				<td align="left"><input type="text" id="firstName" name="firstName" size="45" value="${customer.firstName}" /></td>
+				<td align="left"><input type="text" id="firstName" name="firstName" size="45" value="${customer.firstname}" /></td>
 			</tr>
 			<tr>
 				<td align="right">Last Name:</td>
-				<td align="left"><input type="text" id="lastName" name="lastName" size="45" value="${customer.lastName}" /></td>
+				<td align="left"><input type="text" id="lastName" name="lastName" size="45" value="${customer.lastname}" /></td>
 			</tr>
 			<tr>
 				<td align="right">Password:</td>

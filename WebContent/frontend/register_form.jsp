@@ -1,16 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Register as a Customer</title>
-    <link rel="stylesheet" href="css/style.css" >
-    <link rel="stylesheet" href="../css/jquery-ui.min.css">
     
+    <link rel="stylesheet" href="css/style.css" >
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-     
+    
 </head>
 <body>
 	<jsp:directive.include file="header.jsp" />
@@ -20,109 +20,15 @@
 		</h2>
 	</div>
 
-
 	<div align="center">
-		<form action="register_customer" method="post" id="customerForm">
-		<table class="form">
-		   
-			<tr>
-				<td align="right">Email:</td>
-				<td align="left"><input type="text" id="email" name="email" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">Full name:</td>
-				<td align="left"><input type="text" id="fullName" name="fullName" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">Password:</td>
-				<td align="left"><input type="password" id="password" name="password" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">Confirm Password:</td>
-				<td align="left"><input type="password" id="confirmPassword" name="confirmPassword" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">Phone number:</td>
-				<td align="left"><input type="text" id="phone" name="phone" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">Address:</td>
-				<td align="left"><input type="text" id="address" name="address" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">City:</td>
-				<td align="left"><input type="text" id="city" name="city" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">Zip code:</td>
-				<td align="left"><input type="text" id="zipCode" name="zipCode" size="45"/></td>
-			</tr>
-			<tr>
-				<td align="right">Country:</td>
-				<td align="left"><input type="text" id="country" name="country" size="45" /></td>
-			</tr>
-			<tr><td>&nbsp;</td></tr>
-			<tr>
-			   <td colspan="2" align="center">
-			      <button type="submit">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;
-			      <button id="buttonCancel">Cancel</button>
-			   </td>
-			</tr>
-		</table>
+	
+	    <form action="register_customer" method="post" id="customerForm">
+	    <jsp:directive.include file="../common/customer_form.jsp" />
 		</form>
 	</div>
 
 
 	<jsp:directive.include file="footer.jsp" />
-	
 </body>
-<script type="text/javascript">
-
-$(document).ready(function(){
-	$("#customerForm").validate({
-		rules: {	
-			email: {
-				required: true,
-				email: true,
-			},
-			fullName: "required",
-			password: "required",
-			confirmPassword: {
-				required: true,
-				equalTo: "#password"
-				},
-			phone: "required",
-			address: "required",
-			city: "required",
-			zipCode: "required",
-			country: "required"			
-		},
-		
-		messages: {	
-			email: {
-				required: "Please enter email address",
-				email: "Please enter a valid email address",
-			},
-			fullName: "Please enter full name",
-			password: "Please enter password",
-			
-			confirmPassword: {
-				required: "Please confirm password",
-				equalTo: "Confirm password does not match password"
-			},	
-			phone: "Please enter phone",
-			address: "Please enter address",
-			city: "Please enter city",
-			zipCode: "Please enter zip code",
-			country: "Please enter country"
-		}
-	});
-	
-	$("#buttonCancel").click(function(){
-		history.go(-1);
-	});
-});
-
-</script>
-
+<script type="text/javascript" src="js/customer-form.js"></script>
 </html>
