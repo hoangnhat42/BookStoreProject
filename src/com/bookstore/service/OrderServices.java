@@ -186,9 +186,69 @@ public class OrderServices {
 		listAllOrder(message);
 	}
 
-	public void updateOrder() {
-		// TODO Auto-generated method stub
+	public void updateOrder() throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		BookOrder order = (BookOrder) session.getAttribute("order");
 		
+		String firstname = request.getParameter("firstname");
+		String lastname = request.getParameter("lastname");
+		String phone = request.getParameter("phone");
+		String address1 = request.getParameter("address1");
+		String address2 = request.getParameter("address2");
+		String city = request.getParameter("city");
+		String state = request.getParameter("state");
+		String zipcode = request.getParameter("zipcode");
+		String country = request.getParameter("country");
+		
+		float shippingFee = Float.parseFloat(request.getParameter("shippingFee"));
+		float tax = Float.parseFloat(request.getParameter("tax"));
+		
+		String paymentMethod = request.getParameter("paymentMethod");
+		String orderStatus = request.getParameter("orderStatus");
+		
+	
+		
+		String[] arrayBookId = request.getParameterValues("bookId");
+		String[] arrayPrice = request.getParameterValues("price");
+		String[] arrayQuantity = new String[arrayBookId.length];
+		
+		for (int i = 1; i <= arrayQuantity.length; i++) {
+			arrayQuantity[i - 1] = request.getParameter("quantity" + i);
+		}
+		
+		Set<OrderDetail> orderDetails = order.getOrderDetails();
+		orderDetails.clear();
+		
+		float totalAmount = 0.0f;
+		
+		for (int i = 0; i < arrayBookId.length; i++) {
+			int bookId = Integer.parseInt(arrayBookId[i]);
+			int quantity = Integer.parseInt(arrayQuantity[i]);
+			float price = Float.parseFloat(arrayPrice[i]);
+			
+			float subtotal = price * quantity;
+			
+			OrderDetail orderDetail = new OrderDetail();
+			orderDetail.setBook(new Book(bookId));
+			orderDetail.setQuantity(quantity);
+			orderDetail.setSubtotal(subtotal);
+			orderDetail.setBookOrder(order);
+			
+			orderDetails.add(orderDetail);
+			
+			totalAmount += subtotal;
+		}
+		
+		
+		totalAmount += shippingFee;
+		totalAmount += tax;
+		order.setTotal(totalAmount);
+		
+		orderDAO.update(order);
+		
+		String message = "The order " + order.getOrderId() + " has been updated successfully";
+		
+		listAllOrder(message);
 	}
 
 }

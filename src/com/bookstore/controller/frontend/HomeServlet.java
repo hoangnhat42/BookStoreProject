@@ -20,13 +20,17 @@ public class HomeServlet extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		BookDAO bookDAO = new BookDAO();
 		
 		List<Book> listNewBooks = bookDAO.listNewBooks();
+		List<Book> listBestSellingBooks = bookDAO.listBestSellingBooks();
+		List<Book> listMostFavoredBooks = bookDAO.listMostFavoredBooks();
 		
 		request.setAttribute("listNewBooks", listNewBooks);
+		request.setAttribute("listBestSellingBooks", listBestSellingBooks);
+		request.setAttribute("listMostFavoredBooks", listMostFavoredBooks);
 		
 		String homepage = "frontend/index.jsp";
 		RequestDispatcher dispatch = request.getRequestDispatcher(homepage);

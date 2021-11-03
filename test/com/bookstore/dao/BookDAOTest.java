@@ -247,7 +247,7 @@ public class BookDAOTest {
 		
 		assertEquals(numOfBooks, 2);
 	}
-	/*
+	
 	@Test
 	public void testListBestSellingBooks() {
 		List<Book> topBestSellingBooks = bookDao.listBestSellingBooks();
@@ -256,7 +256,7 @@ public class BookDAOTest {
 			System.out.println(book.getTitle());
 		}
 		
-		assertEquals(4, topBestSellingBooks.size());
+		assertEquals(2, topBestSellingBooks.size());
 	}
 	
 	@Test
@@ -267,8 +267,8 @@ public class BookDAOTest {
 			System.out.println(book.getTitle());
 		}
 		
-		assertEquals(4, topFavoredBooks.size());
+		assertEquals(2, topFavoredBooks.size());
 	}
 	
-	*/
+	
 }

@@ -60,7 +60,7 @@
                 <th>Customer</th>
                 <th>Review On</th>
             </tr>
-  <%--          <c:forEach items="listMostRecentReviews" var="review">
+            <c:forEach items="${listMostRecentReviews}" var="review">
             <tr>
                 <td>${review.book.title}</td>
                 <td>${review.rating}</td>
@@ -68,7 +68,7 @@
                 <td>${review.customer.fullname}</td>
                 <td>${review.reviewTime}</td>
             </tr>  
-            </c:forEach> --%>
+            </c:forEach> 
          </table>
      </div> 
      <div align="center">
