@@ -151,7 +151,7 @@ public class OrderServices {
 		BookOrder order = orderDAO.get(orderId, customer.getCustomerId());
 		request.setAttribute("order", order);
 		
-		String detailPage = "order_detail.jsp";
+		String detailPage = "frontend/order_detail.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(detailPage);
 		dispatcher.forward(request, response);
 	}

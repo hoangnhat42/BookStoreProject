@@ -166,13 +166,46 @@ public class OrderDAOTest {
 	}
 
 	@Test
-	public void testListByCustomer() {
-		fail("Not yet implemented");
+	public void testListByCustomerNoOrders() {
+		Integer customerId = 99;
+		List<BookOrder> listOrders = orderDAO.listByCustomer(customerId);
+		
+		assertTrue(listOrders.isEmpty());
+	}
+	
+	@Test
+	public void testListByCustomerHaveOrders() {
+		Integer customerId = 16;
+		List<BookOrder> listOrders = orderDAO.listByCustomer(customerId);
+		
+		assertTrue(listOrders.size() > 0);
 	}
 
 	@Test
+	public void testGetByIdAndCustomerNull() {
+		Integer orderId = 10;
+		Integer customerId = 99;
+		
+		BookOrder order = orderDAO.get(orderId, customerId);
+		
+		assertNull(order);
+	}
+	
+	@Test
+	public void testGetByIdAndCustomerNotNull() {
+		Integer orderId = 30;
+		Integer customerId = 16;
+		
+		BookOrder order = orderDAO.get(orderId, customerId);
+		
+		assertNotNull(order);
+	}
+	
+	@Test
 	public void testListMostRecentSales() {
-		fail("Not yet implemented");
+		List<BookOrder> recentOrders = orderDAO.listMostRecentSales();
+		
+		assertEquals(3, recentOrders.size());
 	}
 
 }

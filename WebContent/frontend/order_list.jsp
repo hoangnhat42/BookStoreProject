@@ -7,7 +7,7 @@
 <html>
 <head>
      <meta charset="UTF-8">
-     <title>My Order History - SUAH Bookstore</title>
+     <title>My Order History - Bookstore</title>
      <link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
