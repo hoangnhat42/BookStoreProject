@@ -73,8 +73,8 @@ public class OrderServices {
 	}
 
 	public void placeOrder() throws ServletException, IOException {
-		String recipientName = request.getParameter("recipientName");
-		String recipientPhone = request.getParameter("recipientPhone");
+		String recipientName = request.getParameter("fullname");
+		String recipientPhone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		String city = request.getParameter("city");
 		String zipcode = request.getParameter("zipcode");
