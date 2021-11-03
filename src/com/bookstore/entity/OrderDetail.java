@@ -18,6 +18,7 @@ import javax.persistence.Table;
 @Table(name = "order_detail", catalog = "bookstoredb")
 public class OrderDetail implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private OrderDetailId id = new OrderDetailId();
 	private Book book;
 	private BookOrder bookOrder;
@@ -64,7 +65,7 @@ public class OrderDetail implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "book_id", insertable = false, updatable = false, nullable = false)
+	@JoinColumn(name = "order_id", insertable = false, updatable = false, nullable = false)
 	public BookOrder getBookOrder() {
 		return this.bookOrder;
 	}

@@ -38,7 +38,7 @@ public class OrderDAOTest {
 		customer.setCustomerId(12);
 		
 		order.setCustomer(customer);
-		order.setRecipientName("Nguyen Hoang Nhat");
+		order.setRecipientName("Phan Thanh Sang");
 		order.setRecipientPhone("0762539444");
 		order.setShippingAddress("Viet Nam");
 
@@ -47,7 +47,7 @@ public class OrderDAOTest {
 		
 		Book book = new Book(40);
 		orderDetail.setBook(book);
-		orderDetail.setQuantity(1);
+		orderDetail.setQuantity(6);
 		orderDetail.setSubtotal(68.0f);
 		orderDetail.setBookOrder(order);
 		

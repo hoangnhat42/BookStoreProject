@@ -25,6 +25,10 @@ import javax.persistence.NamedQuery;
 })
 public class Category implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer categoryId;
 	private String name;
 	private Set<Book> books = new HashSet<Book>(0);
