@@ -83,9 +83,9 @@ public class OrderServices {
 		String shippingAddress = address + ", " + city + ", " + zipcode + ", " + country;
 		
 		BookOrder order = new BookOrder();
-		order.setRecipientName(recipientName);
-		order.setRecipientPhone(recipientPhone);
-		order.setShippingAddress(shippingAddress);
+		order.setFirstname(recipientName);
+		order.setPhone(recipientPhone);
+		order.setAddressLine1(shippingAddress);
 		order.setPaymentMethod(paymentMethod);
 		
 		HttpSession session = request.getSession();

@@ -35,29 +35,39 @@ public class OrderDAOTest {
 	public void testCreateBookOrder() {
 		BookOrder order = new BookOrder();
 		Customer customer = new Customer();
-		customer.setCustomerId(15);
+		customer.setCustomerId(3);
 		
 		order.setCustomer(customer);
-		order.setRecipientName("Phan Thanh Sang");
-		order.setRecipientPhone("0762539444");
-		order.setShippingAddress("Viet Nam");
-
+		order.setFirstname("Jennie");
+		order.setLastname("Fer");
+		order.setPhone("12345566");
+		order.setAddressLine1("123 South St");
+		order.setAddressLine2("Clifton Park");
+		order.setCity("New York");
+		order.setState("New York");
+		order.setCountry("US");
+		order.setPaymentMethod("paypal");
+		order.setZipcode("123566");
+		
 		Set<OrderDetail> orderDetails = new HashSet<>();
 		OrderDetail orderDetail = new OrderDetail();
 		
-		Book book = new Book(40);
+		Book book = new Book(9);
 		orderDetail.setBook(book);
-		orderDetail.setQuantity(6);
+		orderDetail.setQuantity(2);
 		orderDetail.setSubtotal(68.0f);
 		orderDetail.setBookOrder(order);
 		
 		orderDetails.add(orderDetail);
 		
 		order.setOrderDetails(orderDetails);
+		order.setTax(6.8f);
+		order.setShippingFee(2.0f);
+		order.setSubtotal(68.0f);
+		order.setTotal(76.8f);
 		
-		orderDAO.create(order);
-		
-		assertTrue(order.getOrderId() > 0);
+		BookOrder savedOrder = orderDAO.create(order);
+		assertNotNull(savedOrder);
 		
 	}
 
@@ -110,15 +120,15 @@ public class OrderDAOTest {
 
 	@Test
 	public void testUpdateBookOrderShippingAddress() {
-		Integer orderId = 25;
+		Integer orderId = 9;
 		BookOrder order = orderDAO.get(orderId);
-		order.setShippingAddress("New Shipping Address");
+		order.setAddressLine1("New Shipping Address");
 		
 		orderDAO.update(order);
 		
 		BookOrder updateOrder = orderDAO.get(orderId);
 		
-		assertEquals(order.getShippingAddress(), updateOrder.getShippingAddress());
+		assertEquals(order.getAddressLine1(), updateOrder.getAddressLine1());
 	}
 	
 	@Test

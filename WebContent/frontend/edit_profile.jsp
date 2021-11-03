@@ -108,15 +108,16 @@ $(document).ready(function(){
 	            email: true
 			},
 			firstName: "required",
-			ConfirmPassword:{
-				equalTo: "#password"
-				
-			},
+			lastName: "required",
 			phone: "required",
-			address: "required",
+			address1: "required",
 			city: "required",
 			zipCode: "required",
 			country: "required",
+			confirmpassword:{
+				equalTo: "#password"
+				
+			},
 		},
 		
 		messages: {
@@ -125,15 +126,16 @@ $(document).ready(function(){
 				required: "Please enter e-mail address",
 				email: "Please enter a valid e-mail address"
 			},
-			firstName: "Please enter full name",
-			ConfirmPassword: {
-				equalTo: "Confrim password does not match password"
-			},
+			firstName: "Please enter firstname",
+			lastName: "Please enter lastname",
 			phone: "Please enter phone number",
-			address: "Please enter address",
+			address1: "Please enter address",
 			city: "Please enter city",
 			zipCode: "Please enter zip code",
 			country: "Please enter country",
+			confirmpassword: {
+				equalTo: "Confirm password does not match password"
+			},
 		}
 	});
 	
@@ -141,6 +143,7 @@ $(document).ready(function(){
 		history.go(-1);
 	});
 });
+
 
 </script>
 
