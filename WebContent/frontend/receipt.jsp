@@ -58,7 +58,7 @@
                          <td>${item.name}</td>
                          <td>${item.quantity}</td>
                          <td><fmt:formatNumber value="${item.price}" type="currency" /></td>
-                         <td><fmt:formatNumer value="${item.price * item.quantity}" type="currency" /></td>
+                         <td><fmt:formatNumber value="${item.price * item.quantity}" type="currency" /></td>
                      </tr>
                      </c:forEach>
                      <tr>
