@@ -71,31 +71,46 @@
                     <table>
                         <tr>
                            <td>First Name:</td>
-                           <td><input type="text" name="fullname" value="${loggedCustomer.fullname}"/></td>
+                           <td><input type="text" name="firstname" value="${loggedCustomer.firstname}"/></td>
                         </tr>
-                        
+                        <tr>
+                           <td>Last Name:</td>
+                           <td><input type="text" name="lastname" value="${loggedCustomer.lastname}"/></td>
+                        </tr>
                         <tr>
                            <td>Phone:</td>
                            <td><input type="text" name="phone" value="${loggedCustomer.phone}"/></td>
                         </tr>
                         <tr>
                            <td>Address Line 1:</td>
-                           <td><input type="text" name="address" value="${loggedCustomer.address}"/></td>
+                           <td><input type="text" name="address1" value="${loggedCustomer.addressLine1}"/></td>
                         </tr>
-                        
+                        <tr>
+                           <td>Address Line 2:</td>
+                           <td><input type="text" name="address2" value="${loggedCustomer.addressLine2}"/></td>
+                        </tr>
                         <tr>
                            <td>City:</td>
                            <td><input type="text" name="city" value="${loggedCustomer.city}"/></td>
                         </tr>
-                       
+                        <tr>
+                           <td>State:</td>
+                           <td><input type="text" name="state" value="${loggedCustomer.state}"/></td>
+                        </tr>
                         <tr>
                            <td>Zip Code:</td>
                            <td><input type="text" name="zipcode" value="${loggedCustomer.zipcode}"/></td>
                         </tr>
-                         <tr>
-                           <td>Country:</td>
-                       
-                        </tr>
+                        <tr>
+				<td >Country:</td>
+				<td>
+				    <select name="country" id="country">
+				    <c:forEach items="${mapCountries}" var="country">
+				       <option value="${country.value}"<c:if test="${customer.country eq country.value}">selected='selected'</c:if>>${country.key}</option>
+				    </c:forEach>
+				    </select>
+				</td>
+			</tr>
                     </table>
                     <div>
                         <h2>Payment</h2>

@@ -35,7 +35,7 @@ public class OrderDAOTest {
 	public void testCreateBookOrder() {
 		BookOrder order = new BookOrder();
 		Customer customer = new Customer();
-		customer.setCustomerId(3);
+		customer.setCustomerId(12);
 		
 		order.setCustomer(customer);
 		order.setFirstname("Jennie");
@@ -52,7 +52,7 @@ public class OrderDAOTest {
 		Set<OrderDetail> orderDetails = new HashSet<>();
 		OrderDetail orderDetail = new OrderDetail();
 		
-		Book book = new Book(9);
+		Book book = new Book(34);
 		orderDetail.setBook(book);
 		orderDetail.setQuantity(2);
 		orderDetail.setSubtotal(68.0f);
@@ -78,10 +78,10 @@ public class OrderDAOTest {
 
 	@Test
 	public void testGet() {
-		Integer orderId = 25;
+		Integer orderId = 36;
 		BookOrder order = orderDAO.get(orderId);
 		
-		assertEquals(0, order.getOrderDetails().size());
+		assertEquals(1, order.getOrderDetails().size());
 	}
 
 	@Test
@@ -133,7 +133,7 @@ public class OrderDAOTest {
 	
 	@Test
 	public void testUpdateBookOrderDetail() {
-		Integer orderId = 25;
+		Integer orderId = 36;
 		BookOrder order = orderDAO.get(orderId);
 		
 		Iterator<OrderDetail> iterator = order.getOrderDetails().iterator();

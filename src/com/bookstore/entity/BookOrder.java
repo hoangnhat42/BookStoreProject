@@ -142,16 +142,6 @@ public class BookOrder implements java.io.Serializable {
 		this.firstname = firstname;
 	}
 
-	/*	
-	@Column(name = "recipient_phone", nullable = false, length = 15)
-	public String getRecipientPhone() {
-		return this.phone;
-	}
-*/
-	public void setRecipientPhone(String recipientPhone) {
-		this.phone = recipientPhone;
-	}
-
 	@Column(name = "payment_method", nullable = false, length = 20)
 	public String getPaymentMethod() {
 		return this.paymentMethod;
