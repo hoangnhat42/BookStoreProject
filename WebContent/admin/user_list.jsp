@@ -45,122 +45,36 @@
             </div>
             <a class="btn btn-outline custombtn" href="logout"> <i class='bx bx-log-out bx-flip-horizontal' ></i>Log out</a>
         </div>
-        <!-- SIDEBAR MENU -->
-        <ul class="sidebar-menu">
-            <li>
-                <a href="${pageContext.request.contextPath}/admin/" >
-                    <i class='bx bx-home'></i>
-                    <span>dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="list_users" class="active">
-                    <i class='bx bx-shopping-bag'></i>
-                    <span>Users</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-chart'></i>
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class='bx bx-user-circle'></i>
-                    <span>account</span>
-                    <div class="dropdown-icon"></div>
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#">
-                            edit profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            account settings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            billing
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class='bx bx-category'></i>
-                    <span>Books</span>
-                    <div class="dropdown-icon"></div>
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#">
-                            list
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            add project
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class='bx bx-category'></i>
-                    <span>Customers</span>
-                    <div class="dropdown-icon"></div>
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#">
-                            list product
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            add product
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            orders
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-mail-send'></i>
-                    <span>Reviews</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-chat'></i>
-                    <span>orders</span>
-                </a>
-            </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class='bx bx-cog'></i>
-                    <span>settings</span>
-                    <div class="dropdown-icon"></div>
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#" class="darkmode-toggle" id="darkmode-toggle">
-                            darkmode
-                            <span class="darkmode-switch"></span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <!-- END SIDEBAR MENU -->
+<!-- SIDEBAR MENU -->
+		<ul class="sidebar-menu">
+			<li><a href="${pageContext.request.contextPath}/admin/" > <i class='bx bx-home'></i> <span>dashboard</span>
+			</a></li>
+			<li><a href="#" class="active"> <i class='bx bx-user'></i> <span>Users</span>
+			</a></li>
+			<li><a href="list_category"> <i class='bx bx-category'></i>
+					<span>Categories</span>
+			</a></li>
+			<li><a href="list_books"> <i class='bx bx-book-bookmark'></i>
+					<span>Books</span>
+			</a></li>
+			<li><a href="list_customer"> <i class='bx bxs-user-detail'></i>
+					<span>Customers</span>
+			</a></li>
+			<li><a href="list_review"> <i class='bx bx-text'></i> <span>Reviews</span>
+			</a></li>
+			<li><a href="list_order"> <i class='bx bx-cart'></i> <span>orders</span>
+			</a></li>
+			<li class="sidebar-submenu"><a href="#"
+				class="sidebar-menu-dropdown"> <i class='bx bx-cog'></i> <span>settings</span>
+					<div class="dropdown-icon"></div>
+			</a>
+				<ul class="sidebar-menu sidebar-menu-dropdown-content">
+					<li><a href="#" class="darkmode-toggle" id="darkmode-toggle">
+							darkmode <span class="darkmode-switch"></span>
+					</a></li>
+				</ul></li>
+		</ul>
+		<!-- END SIDEBAR MENU -->
     </div>
     <!-- END SIDEBAR -->
 
@@ -229,8 +143,11 @@
                                                  </div>
                                              </td>
 
-                                        <td><a href="edit_user?id=${user.userId}">Edit</a> &nbsp; 
-                                                <a href="javascript:void(0);" class="deleteLink" id="${user.userId}">Delete</a></td>
+                                        <td><a href="edit_user?id=${user.userId}"><i
+				class='bx bx-edit bx-flip-horizontal'></i>Edit |</a> &nbsp; 
+                                                <a href="javascript:void(0);" class="deleteLink" id="${user.userId}">
+                                                <i
+				class='bx bx-trash bx-flip-horizontal'></i>Delete</a></td>
                                     </tr>
                                   </c:forEach>
                                 
