@@ -153,7 +153,10 @@
 </form>
 	<jsp:directive.include file="footer.jsp" />
 	
-	<script>
+	
+</body>
+
+<script type="text/javascript">
 	     
 	   function showAddBookPopup() {
 		   var width = 600;
@@ -172,11 +175,10 @@
 					lastname: "required",
 					phone: "required",
 					address1: "required",
-					address2: "required",
 					city: "required",
 					state: "required",
 					zipcode: "required",
-					country: "required"
+					country: "required",
 					
 					<c:forEach items="${order.orderDetails}" var="book" varStatus="status">
 			           quantity${status.index + 1}: {
@@ -185,18 +187,18 @@
 			       </c:forEach>
 			    	   
 			       shippingFee: {required: true, number: true, min: 0},
-			       tax: {required: true, number: true, min: 0}
+			       tax: {required: true, number: true, min: 0},
 				},
+				
 				messages: {
 					firstname: "Please enter firstname",
 					lastname: "Please enter lastname",
 					phone: "Please enter phone",
 					address1: "Please enter address line 1",
-					address2: "Please enter address line 2",
 					city: "Please enter city",
 					state: "Please enter state",
 					zipcode: "Please enter zipcode",
-					country: "Please select country"
+					country: "Please select country",
 					
 					<c:forEach items="${order.orderDetails}" var="book" varStatus="status">
 			             quantity${status.index + 1}: {
@@ -215,12 +217,12 @@
 			    		required: "Please enter tax",
 			    		number: "Tax must be a number",
 			    		min: "Tax must be equal or greater than 0"
-			    	}
+			    	},
 				}
 			});
 			
 		});
 	
 	</script>
-</body>
+
 </html>

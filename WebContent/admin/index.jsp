@@ -1,86 +1,480 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Bookstore Administration</title>
-    <link rel="stylesheet" href="../css/style.css" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Bookstore Administration
+    </title>
+    <link rel="shortcut icon" href=".../images/logo-mb.png" type="image/png">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/app.css">
 </head>
+
 <body>
-     <jsp:directive.include file="header.jsp"/>
-     <div align="center">
-         <h2 class="pageheading">Administative Dashboard</h2>
-     </div>
-     
-     <div align="center">
-         <hr width="60%"/>
-         <h2 class="pageheading">Quick Actions</h2>
-         <a href="new_book">New Book</a> &nbsp;
-         <a href="user_form.jsp">New User</a> &nbsp;
-         <a href="category_form.jsp">New Category</a> &nbsp;
-         <a href="new_customer">New Customer</a> 
-     </div>
-     
-     <div align="center">
-         <hr width="60%"/>
-         <h2 class="pageheading">Recent Sales:</h2>
-         <table border="1">
-             <tr>
-                <th>Order ID</th>
-                <th>Ordered By</th>
-                <th>Book Copies</th>
-                <th>Total</th>
-                <th>Payment Method</th>
-                <th>Status</th>
-                <th>Order Date</th>
-             </tr>
-             <c:forEach items="${listMostRecentSales}" var="order" varStatus="status">
-             <tr>
-                <td><a href="view_order?id=${order.orderId}">${order.orderId}</a></td>
-                <td>${order.customer.fullname}</td>
-                <td>${order.bookCopies}</td>
-                <td><fmt:formatNumber value="${order.total}" type="currency"/></td>
-                <td>${order.paymentMethod}</td>
-                <td>${order.status}</td>
-                <td>${order.orderDate}</td>
-             </tr>
-             </c:forEach>
-         </table>
-     </div>
-     <div align="center">
-         <hr width="60%"/>
-         <h2 class="pageheading">Recent Reviews:</h2>
-         <table border="1">
-            <tr>
-                <th>Book</th>
-                <th>Rating</th>
-                <th>Headline</th>
-                <th>Customer</th>
-                <th>Review On</th>
-            </tr>
-            <c:forEach items="${listMostRecentReviews}" var="review">
-            <tr>
-                <td>${review.book.title}</td>
-                <td>${review.rating}</td>
-                <td><a href="edit_review?id=${review.reviewId}">${review.headline}</a></td>
-                <td>${review.customer.fullname}</td>
-                <td>${review.reviewTime}</td>
-            </tr>  
-            </c:forEach>
-         </table>
-     </div>
-     <div align="center">
-         <hr width="60%"/>
-         <h2 class="pageheading">Statistics</h2>
-         Total Users: ${totalUsers}&nbsp;&nbsp;&nbsp;&nbsp;
-         Total Books: ${totalBooks}&nbsp;&nbsp;&nbsp;&nbsp;
-         Total Customers: ${totalCustomers}&nbsp;&nbsp;&nbsp;&nbsp;
-         Total Reviews: ${totalReviews}&nbsp;&nbsp;&nbsp;&nbsp;
-         Total Orders: ${totalOrders}
-         <hr width="60%"/>
-     </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/logo-lg.png" alt="Comapny logo">
+            <div class="sidebar-close" id="sidebar-close">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-info">
+                <img src="../images/user-image-2.png" alt="User picture" class="profile-image">
+                <div class="sidebar-user-name">
+                    Welcome, <c:out value="${sessionScope.useremail}"/>
+                </div>
+            </div>
+            
+                
+                
+                <a class="btn btn-outline custombtn" href="logout"> <i class='bx bx-log-out bx-flip-horizontal' ></i>Log out</a>
+            
+        </div>
+        <!-- SIDEBAR MENU -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="active">
+                    <i class='bx bx-home'></i>
+                    <span>dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="list_users">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-chart'></i>
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-user-circle'></i>
+                    <span>account</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#">
+                            edit profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            account settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            billing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-category'></i>
+                    <span>Books</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#">
+                            list
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            add project
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-category'></i>
+                    <span>Customers</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#">
+                            list product
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            add product
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            orders
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-mail-send'></i>
+                    <span>Reviews</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-chat'></i>
+                    <span>orders</span>
+                </a>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-cog'></i>
+                    <span>settings</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#" class="darkmode-toggle" id="darkmode-toggle">
+                            darkmode
+                            <span class="darkmode-switch"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+    <!-- END SIDEBAR -->
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu-alt-right'></i>
+            </div>
+            <div class="main-title customdb">
+                dashboard
+                			<span 	class="btn-color">
+                				<a href="new_book">
+        						<input  type="submit" value="New Book" class="btn btn-primary btn-test"> </a>
+    						</span>
+    						
+    						<span class="btn-color">
+    						<a href="user_form.jsp">
+        						<input type="submit" value="New User" class="btn btn-primary btn-test"> </a>
+    						</span>
+    						
+       						<span class="btn-color">
+    						<a href="category_form.jsp">
+        						<input type="submit" value="New Category" class="btn btn-primary btn-test"> </a>
+    						</span>
+    						
+    						<span class="btn-color">
+    						<a href="new_customer">
+        						<input type="submit" value="New Customer" class="btn btn-primary btn-test"> </a>
+    						</span>
+    						
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="row">
+                <div class="col-3 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                                Total Users:
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    
+                                    ${totalUsers}
+                                </div>
+                                <i class='bx bx-shopping-bag'></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+                <div class="col-3 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                                Total Books
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    
+                                    ${totalBooks}
+                                </div>
+                                <i class='bx bx-chat'></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+                <div class="col-3 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                                Total Customers
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    
+                                    ${totalCustomers}
+                                </div>
+                                <i class='bx bx-line-chart'></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+                <div class="col-3 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                                Total Reviews
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    
+                                    ${totalReviews}
+                                </div>
+                                <i class='bx bx-user'></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+                <div class="col-3 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                                Total Orders
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    
+                                    ${totalOrders}
+                                </div>
+                                <i class='bx bx-user'></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3 col-md-6 col-sm-12">
+                    <!-- TOP PRODUCT -->
+<div class="box f-height">
+<div class="box-body">
+
+<c:forEach items="${listNewBooks}" var="book">
+    <ul class="product-list">
+        <li class="product-list-item">
+            <div class="item-info">
+                <img src="data:image/jpg;base64, ${book.base64Image}" alt=""/>
+                <div class="item-name">
+                    <div class="product-name"><a href="view_book?id=${book.bookId}">
+                        <b>${book.title}</b>
+                     </a></div>
+                    
+                    <div class="text-second"><span class="author">
+                        ${book.author}
+                    </span></div>
+                </div>
+            </div>
+            <div class="item-sale-info">
+                <div class="text-second">Price</div>
+                <div class="product-sales"><span class="price">$${book.price}</span></div>
+            </div>
+        </li>
+    </ul>
+</c:forEach>
+</div>
+</div>
+<!-- TOP PRODUCT -->
+                </div>
+                <div class="col-4 col-md-6 col-sm-12">
+                    <!-- CATEGORY CHART -->
+                    <div class="box f-height">
+                        <div class="box-body">
+                            <div id="category-chart"></div>
+                        </div>
+                    </div>
+                    <!-- END CATEGORY CHART -->
+                </div>
+                <div class="col-5 col-md-12 col-sm-12">
+                    <!-- CUSTOMERS CHART -->
+                    <div class="box f-height">
+                        <div class="box-header">
+                            customers
+                        </div>
+                        <div class="box-body">
+                            <div id="customer-chart"></div>
+                        </div>
+                    </div>
+                    <!-- END CUSTOMERS CHART -->
+                </div>
+                <div class="col-12">
+            
+                    <!-- ORDERS TABLE -->
+                    <div class="box">
+                        <div class="box-header">
+                            Recent Sales
+                        </div>
+                        <div class="box-body overflow-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Ordered By</th>
+                                        <th>Book Copies</th>
+                                        <th>Total</th>
+                                        <th>Payment Method</th>
+                                        <th>Status</th>
+                                        <th>Order Date</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${listMostRecentSales}" var="order" varStatus="status">
+                                    <tr>
+                                        <td><a href="view_order?id=${order.orderId}">${order.orderId}</a></td>
+              						    	<td>
+              						    <div class="order-owner">
+                                                <img src="../images/user-image-2.png" alt="user image"> 
+                                                ${order.customer.fullname}
+                                            </div>
+                                            
+                                            </td>
+                                            
+             						    <td>
+             						    <div class="payment-status payment-paid">
+                                             <div class="dot"></div>  ${order.bookCopies}  
+                                             </div>
+             						    </td>
+             						    
+             						    <td><fmt:formatNumber value="${order.total}" type="currency"/></td>
+             						    
+             						    <td>
+             						    <span class="order-status order-shipped">
+                                               ${order.paymentMethod}
+                                            </span></td>
+                                         
+                                          <td>
+             						    <span class="order-status order-shipped">
+                                               ${order.status}
+                                            </span></td>
+                                  						    
+                                        <td>
+                                        <span class="order-status order-shipped">
+                                              ${order.orderDate}
+                                            </span></td>
+                                    </tr>
+                                  </c:forEach>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END ORDERS TABLE -->
+                           <!-- ORDERS TABLE -->
+                    <div class="box">
+                        <div class="box-header">
+                            Recent Reviews
+                        </div>
+                        <div class="box-body overflow-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Book</th>
+                						<th>Rating</th>
+                						<th>Headline</th>
+                						<th>Customer</th>
+                						<th>Review On</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody>
+                               <c:forEach items="${listMostRecentReviews}" var="review">
+                                    <tr>
+                                      <td>
+             						    <span class="order-status order-shipped">
+                                               ${review.book.title}
+                                            </span></td>
+                                            
+                                       <td>
+             						    <div class="payment-status payment-paid">
+             						    	${review.rating} 
+             						    	<span class="iconify" data-icon="emojione:star"></span>
+             						    	
+                                             </div>
+             						    </td>
+             						    
+                                        <td><a href="edit_review?id=${review.reviewId}">${review.headline}</a></td>
+                                        
+              						    	<td>
+              						    <div class="order-owner">
+                                                <img src="../images/user-image-2.png" alt="user image"> 
+                                                ${review.customer.fullname}
+                                            </div>
+                                           </td>
+                                         
+                                         <td>
+             						    <span class="order-status order-shipped">
+                                               ${review.reviewTime}
+                                            </span></td>
+                          
+                                    </tr>
+                                  </c:forEach>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END ORDERS TABLE -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+
+    <div class="overlay"></div>
+
+    <!-- SCRIPT -->
+    <!-- APEX CHART -->
+    <script src="../js/apexcharts.js"></script>
+    <!-- APP JS -->
+    <script src="../js/app.js"></script>
+    <!-- Star -->
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
      <jsp:directive.include file="footer.jsp"/>
 </body>
 </html>

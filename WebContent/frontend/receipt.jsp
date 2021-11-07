@@ -3,7 +3,7 @@
         <table>
             <tr>
                <td><b>E-mail: </b></td>
-               <td>sales@suhabooks.com</td>
+               <td>sales@nhatsangbook.com</td>
             </tr>
             <tr>
                <td><b>Phone</b></td>
