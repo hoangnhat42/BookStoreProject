@@ -37,11 +37,11 @@ public class BookDAOTest {
 	public void testCreateBook() throws ParseException, IOException {
 		Book newBook = new Book();
 		
-		Category category = new Category("Effective Java");
+		Category category = new Category("Test");
 		category.setCategoryId(11);
 		newBook.setCategory(category);
 		
-		newBook.setTitle("Effective Java (2nd Edition)");
+		newBook.setTitle("Test (5nd Edition)");
 		newBook.setAuthor("Joshua Bloch");
 		newBook.setDescription("New coverage of generics, enums, annotations, autoboxing");
 		newBook.setPrice(38.87f);
@@ -50,8 +50,8 @@ public class BookDAOTest {
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date publishDate = dateFormat.parse("05/28/2008");
 		newBook.setPublishDate(publishDate);
-		
-		String imagePath = "C:\\Users\\hoang\\Documents\\workspace\\BookStoreWebsite\\WebContent\\books\\Effective Java.jpg";
+			
+			String imagePath = "C:\\Users\\hoang\\Documents\\workspace\\BookStoreWebsite\\WebContent\\books\\Effective Java.jpg";
 		byte[] imageBytes = Files.readAllBytes(Paths.get(imagePath));
 		newBook.setImage(imageBytes);
 		
