@@ -23,7 +23,7 @@
 		    </tr>
 		     <tr>
 		        <td><b>Total Amount: </b></td>
-		        <td><fmt:formatNumber value="${order.total}" type="currency"/></td>
+		        <td><fmt:setLocale value = "en_US"/> <fmt:formatNumber value="${order.total}" type="currency"/></td>
 		    </tr>
 		</table>
 		<h2>Recipient Information</h2>
@@ -85,17 +85,17 @@
 	               ${orderDetail.book.title}
 	           </td>
 	           <td>${orderDetail.book.author}</td>
-	           <td><fmt:formatNumber value="${orderDetail.book.price}" type="currency"/></td>
+	           <td> <fmt:setLocale value = "en_US"/><fmt:formatNumber value="${orderDetail.book.price}" type="currency"/></td>
 	           <td>${orderDetail.quantity}</td>
-	           <td><fmt:formatNumber value="${orderDetail.subtotal}" type="currency"/></td>
+	           <td> <fmt:setLocale value = "en_US"/><fmt:formatNumber value="${orderDetail.subtotal}" type="currency"/></td>
 	       </tr>
 	       </c:forEach>
 	       <tr>
 	           <td colspan="6" align="right">
-	              <p>Subtotal: <fmt:formatNumber value="${order.subtotal}" type="currency"/></p>
-	              <p>Tax: <fmt:formatNumber value="${order.tax}" type="currency"/></p>
-	              <p>Shipping Fee: <fmt:formatNumber value="${order.shippingFee}" type="currency"/></p>
-	              <p>TOTAL:<fmt:formatNumber value="${order.total}" type="currency"/></p>
+	              <p>Subtotal: <fmt:setLocale value = "en_US"/> <fmt:formatNumber value="${order.subtotal}" type="currency"/></p>
+	              <p>Tax:<fmt:setLocale value = "en_US"/>  <fmt:formatNumber value="${order.tax}" type="currency"/></p>
+	              <p>Shipping Fee: <fmt:setLocale value = "en_US"/> <fmt:formatNumber value="${order.shippingFee}" type="currency"/></p>
+	              <p>TOTAL: <fmt:setLocale value = "en_US"/> <fmt:formatNumber value="${order.total}" type="currency"/></p>
 	           </td>
 	       </tr>
 	   </table>

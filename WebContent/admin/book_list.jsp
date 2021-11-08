@@ -100,11 +100,11 @@
 
 					<!-- ORDERS TABLE -->
 					<div class="box">
-
+						<td><span class="btn-color">
 						<a href="new_book"> <input type="submit"
 							value="Create New Book"
 							class="btn btn-primary btn-test width148px">
-						</a> </span>
+						</a> </span> </td>
 						<c:if test="${message != null}">
 							<div align="center">
 								<h4 class="message">${message}</h4>

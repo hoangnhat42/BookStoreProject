@@ -96,10 +96,10 @@
             
                     <!-- ORDERS TABLE -->
                     <div class="box">
-                        
+                        <td><span class="btn-color">
                         <a href="category_form.jsp">
                             <input type="submit" value="Create New Category" class="btn btn-primary btn-test width182px"> </a>
-                        </span>
+                        </span> </td>
                         <c:if test="${message != null}">
 	                        <div align="center">
 	                        <h4 class="message">${message}</h4>
