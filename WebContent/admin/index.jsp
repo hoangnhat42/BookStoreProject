@@ -265,7 +265,7 @@
 												</div>
 											</td>
 
-											<td><fmt:formatNumber value="${order.total}"
+											<td> <fmt:setLocale value = "en_US"/> <fmt:formatNumber value="${order.total}"
 													type="currency" /></td>
 
 											<td><span class="order-status order-shipped">

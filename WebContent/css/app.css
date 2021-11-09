@@ -536,6 +536,9 @@ input[type="submit" i]{
     display: inline-block;
 }
 
+.textaligncenter {
+	text-align: center;
+}
 .btn-color::before{
     --width-border: -1.5px;
     content: '';
@@ -676,7 +679,7 @@ input[type="submit" i]{
   font-family: 'cabin' Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 400;
-  border-radius: 24px;
+  border-radius: 4px;
   transition: 0.25;
 
 }
@@ -717,4 +720,78 @@ input[type="submit" i]{
         box-shadow: 0 0 20px #00ff0099, inset 0 0 10px #00ff0066, 0 2px 0 #000;
     }
   }
+  
+.error {
+	color : red !important;
+	font-style: italic;
+}
 
+/*Desgin for select*/
+.custom-select {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  color: #888;
+  margin-top: 25px;
+}
+
+.custom-select select {
+  display: block;
+  width: 200px;
+  min-height: 47px;
+  background: #cbe7ff;
+  border-radius: 3px;
+  border: 2px solid #2196F3;
+  outline: none;
+  padding: 0 20px 0 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+.custom-select::after {
+  content: '';
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #222;
+  display: inline-block;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+}
+
+.custom-select .selector-options {
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  background: #11436b;
+  color: #fff;
+  border-radius: 4px;
+  z-index: 1;
+  width: 96%;
+  position: absolute;
+  left: 2%;
+  top: 35%;
+}
+
+.custom-select .selector-options li {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.custom-select .selector-options li:hover {
+  background: #03A9F4;
+}
+
+.table.table-borderless tbody tr > td {
+	witdh: 100px;
+}
