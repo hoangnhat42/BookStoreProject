@@ -94,10 +94,10 @@
 				dashboard <span class="btn-color"> <a href="new_book"> <input
 						type="submit" value="New Book" class="btn btn-primary btn-test">
 				</a>
-				</span> <span class="btn-color"> <a href="user_form.jsp"> <input
+				</span> <span class="btn-color"> <a href="new_user"> <input
 						type="submit" value="New User" class="btn btn-primary btn-test">
 				</a>
-				</span> <span class="btn-color"> <a href="category_form.jsp"> <input
+				</span> <span class="btn-color"> <a href="new_category"> <input
 						type="submit" value="New Category"
 						class="btn btn-primary btn-test">
 				</a>

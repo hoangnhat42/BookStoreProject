@@ -792,6 +792,11 @@ input[type="submit" i]{
   background: #03A9F4;
 }
 
-.table.table-borderless tbody tr > td {
-	witdh: 100px;
+.margintop-2{
+	margin-top: -2px;
+}
+
+
+.ui-datepicker table {
+	min-width: auto !important;
 }

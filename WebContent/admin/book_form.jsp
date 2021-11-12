@@ -115,7 +115,7 @@
                             <tbody>
                                 <tr>
                                     <td>Category:</td>
-                                    <td>
+                                    <td><label class="custom-select margintop-2">
                                         <select name="category">
                                              <c:forEach items="${listCategory}" var="category">
                                              <c:if test="${category.categoryId eq book.category.categoryId}">
@@ -128,6 +128,7 @@
                                              </option>
                                              </c:forEach>
                                         </select>
+                                        </label>
                                     </td>
                                 </tr>
 

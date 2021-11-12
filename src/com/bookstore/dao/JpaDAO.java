@@ -67,6 +67,7 @@ public class JpaDAO <E> {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
 		Query query = entityManager.createNamedQuery(queryName);
+		@SuppressWarnings("unchecked")
 		List<E> result = query.getResultList();
 		
 		entityManager.close();
@@ -80,6 +81,7 @@ public class JpaDAO <E> {
 		query.setFirstResult(firstResult);
 		query.setMaxResults(maxResult);
 		
+		@SuppressWarnings("unchecked")
 		List<E> result = query.getResultList();
 		
 		entityManager.close();
@@ -93,6 +95,7 @@ public class JpaDAO <E> {
 		query.setFirstResult(firstResult);
 		query.setMaxResults(maxResult);
 		
+		@SuppressWarnings("unchecked")
 		List<Object[]> result = query.getResultList();
 		
 		entityManager.close();
@@ -105,7 +108,8 @@ public class JpaDAO <E> {
 		Query query = entityManager.createNamedQuery(queryName);
 		
 		query.setParameter(paramNam, paramValue);
-        List<E> result = query.getResultList();
+        @SuppressWarnings("unchecked")
+		List<E> result = query.getResultList();
 		
 		entityManager.close();
 		return result;
@@ -122,7 +126,8 @@ public class JpaDAO <E> {
 			query.setParameter(entry.getKey(), entry.getValue());
 		}
 		
-        List<E> result = query.getResultList();
+        @SuppressWarnings("unchecked")
+		List<E> result = query.getResultList();
 		
 		entityManager.close();
 		return result;

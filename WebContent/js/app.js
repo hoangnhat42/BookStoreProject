@@ -133,3 +133,10 @@ function setupSelector(selector) {
     }
   });
 }
+
+//page 500
+$(function() {
+	  setTimeout(function(){
+	    $('body').removeClass('loading');
+	  }, 1000);
+	});

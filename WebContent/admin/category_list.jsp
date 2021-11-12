@@ -97,7 +97,7 @@
                     <!-- ORDERS TABLE -->
                     <div class="box">
                         <td><span class="btn-color">
-                        <a href="category_form.jsp">
+                        <a href="new_category">
                             <input type="submit" value="Create New Category" class="btn btn-primary btn-test width182px"> </a>
                         </span> </td>
                         <c:if test="${message != null}">

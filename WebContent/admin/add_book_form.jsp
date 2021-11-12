@@ -24,7 +24,7 @@
              </tr>
              <tr><td>&nbsp;</td></tr>
              <tr>
-                 <td>Number of Copies</td>
+                 <td>Number of Copies:</td>
                  <td>
                      <select name="quantity">
                           <option value="1">1</option>

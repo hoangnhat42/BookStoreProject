@@ -41,7 +41,7 @@ public class BookDAOTest {
 		category.setCategoryId(11);
 		newBook.setCategory(category);
 		
-		newBook.setTitle("Test (5nd Edition)");
+		newBook.setTitle("Test (6nd Edition)");
 		newBook.setAuthor("Joshua Bloch");
 		newBook.setDescription("New coverage of generics, enums, annotations, autoboxing");
 		newBook.setPrice(38.87f);

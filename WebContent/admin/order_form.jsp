@@ -225,7 +225,7 @@
 									<tr>
 										<td class="text-right td-label">Zip Code:</td>
 										<td align="left"><input type="text"
-											class="input-focus usid" id="zipCode" name="zipCode"
+											class="input-focus usid" id="zipcode" name="zipcode"
 											size="45" value="${order.zipcode}" /></td>
 									</tr>
 									<tr>

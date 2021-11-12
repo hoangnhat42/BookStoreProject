@@ -140,4 +140,13 @@ public class UserServices {
         	dispatcher.forward(request, response);
         }
 	}
+
+	public void showUserNewForm() throws ServletException, IOException {
+		List<Users> listUsers = userDAO.listAll();
+		request.setAttribute("listUsers", listUsers);
+		
+		String newPage = "user_form.jsp";
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(newPage);
+		requestDispatcher.forward(request, response);
+	}
 }

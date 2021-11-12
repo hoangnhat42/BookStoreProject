@@ -109,5 +109,14 @@ public class CategoryServices {
 		
 		listCategory(message);	
 	}
+
+	public void showCategoryNewForm() throws ServletException, IOException {
+		List<Category> listCategory = categoryDAO.listAll();
+		request.setAttribute("listCategory", listCategory);
+		
+		String newPage = "category_form.jsp";
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(newPage);
+		requestDispatcher.forward(request, response);
+	}
 	
 }
