@@ -103,7 +103,7 @@
                     </c:if>
                 <div class="col-12">
             
-                    <form action="emailList" method="post" class="container box">
+                    <form action="update_user" method="post" id="userForm" class="container box">
                         <input type="hidden" name="action" value="add">
                         <table class="table table-borderless">
                             <tbody>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Internal Service Error</title>
-<link rel="stylesheet" href="css/404.css">
+<link rel="stylesheet" href="../css/404.css">
 
 </head>
 <body>
