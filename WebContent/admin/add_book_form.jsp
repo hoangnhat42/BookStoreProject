@@ -5,6 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" media="screen" href="../css/plugins.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/styleadmin.css" />
+    <script src="../js/plugins.js"></script>
+    <script src="../js/custom.js"></script>
 <title>Add Book to Order</title>
 </head>
 <body>
@@ -15,7 +20,7 @@
              <tr>
                  <td>Select a book: </td>
                  <td>
-                     <select name="bookId">
+                     <select class="nice-select" name="bookId">
                          <c:forEach items="${listBook}" var="book" varStatus="status">
                                <option value="${book.bookId}">${book.title} - ${book.author}</option>
                          </c:forEach>
@@ -26,7 +31,7 @@
              <tr>
                  <td>Number of Copies:</td>
                  <td>
-                     <select name="quantity">
+                     <select class="nice-select" name="quantity">
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -38,9 +43,9 @@
               <tr><td>&nbsp;</td></tr>
               <tr>
                   <td colspan="2" align="center">
-                      <input type="submit" value="Add" />
+                      <input class="place-order" type="submit" value="Add" style="display: inline-block;" />
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <input type="button" value="Cancel" onclick="javascript: self.close();"/>
+                      <input class="place-order" type="button" value="Cancel" style="display: inline-block;" onclick="javascript: self.close();"/>
                   </td>
               </tr>
         </table>

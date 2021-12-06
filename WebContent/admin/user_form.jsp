@@ -128,6 +128,13 @@
                                         name="password" id="password" value="${user.password}"></td>
                                 </tr>
                                
+                                <tr>
+                                    <td class="text-right td-label"><label
+                                        for="customer-email" class= "marginlabel">Confirm Password:</label></td>
+                                    <td><input type="password" class="input-focus usid"
+                                        name="confirmPassword" id="confirmPassword" value="${user.password}"></td>
+                                </tr>
+                                
                                 <td class="text-right"></td>
                                 <td><span class="btn-color"> <input type="submit"
                                         value="Save" class="btn btn-primary btn-test">
@@ -169,6 +176,10 @@
                 },
                 fullname: "required",
                 password:"required",
+                confirmPassword:{
+    				required: true,
+    				equalTo: "#password"
+            },
             },
             messages: {
                 email: {
@@ -176,7 +187,11 @@
                     email: "Please enter an valid email address"
                 },
                 fullname: "Please enter full name",
-                password:"Please enter password"
+                password:"Please enter password",
+                confirmPassword: {
+    				required: "Please confirm password",
+    				equalTo: "Confirm password does not match password"
+    			}
             }
         });
         

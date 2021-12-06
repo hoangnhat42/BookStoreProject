@@ -7,15 +7,17 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-3">
-                            <a href="${pageContext.request.contextPath}/" class="site-brand">
+                            <a href="${pageContext.request.contextPath}" class="site-brand">
                                 <img src="image/logo.png" alt="">
                             </a>
                         </div>
                         <div class="col-lg-5">
-                            <div class="header-search-block">
-                                <input type="text" placeholder="Search entire store here">
-                                <button>Search</button>
-                            </div>
+	                        <form action="search" method="get">
+	                            <div class="header-search-block">
+	                                <input type="text" name="keyword" placeholder="Search entire store here">
+	                                <button type="submit">Search</button>
+	                            </div>
+                            </form>
                         </div>
                         <div class="col-lg-4">
                             <div class="main-navigation flex-lg-right">
@@ -23,13 +25,13 @@
                                     <div class="login-block">
                                     	<c:if test="${loggedCustomer == null}">
 	                                        <a href="login" class="font-weight-bold">Login</a> <br>
-	                                        <span>or</span><a href="register">Register</a>                                    		
+	                                        <span>or</span><a href="register">Register</a>
                                     	</c:if>
                                     	
                                     	<c:if test="${loggedCustomer != null}">
-                                    		<a href="view_profile">Welcome, ${loggedCustomer.fullname}</a> 
-										    <a href="view_orders">My Orders</a> 
-										    <a href="logout">Logout</a> 
+                                    		<a href="view_profile" class="font-weight-bold">Welcome, ${loggedCustomer.fullname}</a> <br>
+										    <a href="view_orders">My Orders</a>
+										    <a href="logout">Logout</a>
                                     	</c:if>
                                     </div>
                                     <div class="cart-block">
@@ -41,7 +43,7 @@
                                                 Shopping Cart
                                             </span>
                                             <span class="price">
-                                                £0.00
+                                                $0.00
                                                 <i class="fas fa-chevron-down"></i>
                                             </span>
                                         </div>
@@ -55,14 +57,14 @@
                                                         <h3 class="title"><a href="product-details.html">Kodak PIXPRO
                                                                 Astro Zoom AZ421 16 MP</a>
                                                         </h3>
-                                                        <p class="price"><span class="qty">1 ×</span> £87.34</p>
+                                                        <p class="price"><span class="qty">1 ×</span> $87.34</p>
                                                         <button class="cross-btn"><i class="fas fa-times"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class=" single-cart-block ">
                                                 <div class="btn-block">
-                                                    <a href="cart.html" class="btn">View Cart <i
+                                                    <a href="view_cart" class="btn">View Cart <i
                                                             class="fas fa-chevron-right"></i></a>
                                                     <a href="checkout.html" class="btn btn--primary">Check Out <i
                                                             class="fas fa-chevron-right"></i></a>
@@ -331,12 +333,12 @@
                 <div class="container">
                     <div class="row align-items-sm-end align-items-center">
                         <div class="col-md-4 col-7">
-                            <a href="index.html" class="site-brand">
+                            <a href="${pageContext.request.contextPath}" class="site-brand">
                                 <img src="image/logo.png" alt="">
                             </a>
                         </div>
                         <div class="col-md-5 order-3 order-md-2">
-                            <nav class="category-nav   ">
+                            <nav class="category-nav">
                                 <div>
                                     <a href="javascript:void(0)" class="category-trigger"><i
                                             class="fa fa-bars"></i>Browse
@@ -450,7 +452,7 @@
                             <div class="mobile-header-btns header-top-widget">
                                 <ul class="header-links">
                                     <li class="sin-link">
-                                        <a href="cart.html" class="cart-link link-icon"><i class="ion-bag"></i></a>
+                                        <a href="view_cart" class="cart-link link-icon"><i class="ion-bag"></i></a>
                                     </li>
                                     <li class="sin-link">
                                         <a href="javascript:" class="link-icon hamburgur-icon off-canvas-btn"><i
@@ -634,7 +636,7 @@
             <div class="container d-none d-lg-block">
                 <div class="row align-items-center">
                     <div class="col-lg-4">
-                        <a href="index.html" class="site-brand">
+                        <a href="${pageContext.request.contextPath}" class="site-brand">
                             <img src="image/logo.png" alt="">
                         </a>
                     </div>

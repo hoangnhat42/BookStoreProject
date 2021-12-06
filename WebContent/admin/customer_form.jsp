@@ -109,7 +109,7 @@
 	            </c:if>
                 <div class="col-12">
             
-                    <form action="emailList" method="post" class="container box">
+                    <form class="container box">
                         <input type="hidden" name="action" value="add">
                         <table class="table table-borderless">
                             <tbody>
@@ -136,7 +136,7 @@
                                     </tr>
                                     <tr>
                                         <td class="text-right td-label">Confirm Password:</td>
-                                        <td align="left"><input class="input-focus usid" type="password" id="confirmpassword" name="confirmpassword" size="45" value="${customer.password}" /></td>
+                                        <td align="left"><input class="input-focus usid" type="password" id="confirmPassword" name="confirmPassword" size="45" value="${customer.password}" /></td>
                                     </tr>
                                     <tr>
                                         <td class="text-right td-label">Phone Number:</td>
@@ -165,7 +165,7 @@
                                     <tr>
                                         <td class="text-right td-label">Country:</td>
                                         <td align="left">
-                                            <select name="country" id="country" class="input-focus usid">
+                                            <select name="country" id="country" class="input-focus usid nice-select">
                                             <c:forEach items="${mapCountries}" var="country">
                                                <option value="${country.value}"<c:if test="${customer.country eq country.value}">selected='selected'</c:if>>${country.key}</option>
                                             </c:forEach>

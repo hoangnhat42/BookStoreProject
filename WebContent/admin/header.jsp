@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Create New Customer</title>
     
-    <link rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet" href="../css/styleadmin.css" >
     
 </head>
 <div align="center">

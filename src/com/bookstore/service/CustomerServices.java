@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import com.bookstore.dao.CustomerDAO;
 import com.bookstore.entity.Customer;
 
@@ -222,6 +224,17 @@ public class CustomerServices {
 		
 		String customerForm = "customer_form.jsp";
 		request.getRequestDispatcher(customerForm).forward(request, response);
+	}
+
+	public String resetCustomerPassword(String email) {
+	    Customer customer = customerDAO.findByEmail(email);
+	     
+	    String randomPassword = RandomStringUtils.randomAlphanumeric(10);
+	     
+	    customer.setPassword(randomPassword);
+	    customerDAO.update(customer);
+	     
+	    return randomPassword;
 	}
 	
 }

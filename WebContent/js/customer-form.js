@@ -10,7 +10,7 @@
 			firstName: "required",
 			lastName: "required",
 			password: "required",
-			ConfirmPassword:{
+			confirmPassword:{
 				required: true,
 				equalTo: "#password"
 				
@@ -33,9 +33,9 @@
 			firstName: "Please enter first name",
 			lastName: "Please enter last name",
 			password: "Please enter password",
-			ConfirmPassword: {
+			confirmPassword: {
 				required: "Please confirm password",
-				equalTo: "Confrim password does not match password"
+				equalTo: "Confirm password does not match password"
 			},
 			phone: "Please enter phone number",
 			address1: "Please enter address line 1",

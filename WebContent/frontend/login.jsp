@@ -13,8 +13,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/plugins.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-   	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script src="js/plugins.js"></script>
+   	<script src="js/jquery.validate.min.js"></script>
+    <script src="js/ajax-mail.js"></script>
+    <script src="js/custom.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
 </head>
 
@@ -47,22 +49,23 @@
                                 <h4 class="login-title">Customer Login</h4>
                                 <c:if test="${message != null}">
 							        <div align="center">
-                               			<p><span class="font-weight-bold"><i>${message}</i></span></p>
+                               			<p><span class="font-weight-bold error"><i>*${message}</i></span></p>
 							        </div>
 							    </c:if>
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb--15">
-                                        <label for="email">Enter your email address here...</label>
-                                        <input class="mb-0 form-control" type="text" name="email" id="email" placeholder="Enter you email address here...">
+                                        <label for="email">Email:</label>
+                                        <input class="mb-0 form-control" type="text" name="email" id="email" placeholder="Enter your email address...">
                                     </div>
                                     <div class="col-12 mb--20">
-                                        <label for="password">Password</label>
-                                        <input class="mb-0 form-control" type="password" name="password" id="password" placeholder="Enter your password">
+                                        <label for="password">Password:</label>
+                                        <input class="mb-0 form-control" type="password" name="password" id="password" placeholder="Enter your password...">
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-outlined">Login</button>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<a>Don't have an account?&nbsp;<a href="register" class="font-weight-bold green-hover">Register</a></a>
+										<a href="${pageContext.request.contextPath}/reset_password">I forgot my password</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +79,7 @@
 	<jsp:directive.include file="footer.jsp"/>
 
     <!-- Use Minified Plugins Version For Fast Page Load -->
-    <script type="text/javascript">
+    <script>
 	     $(document).ready(function(){
 		 $("#loginForm").validate({
 			rules: {
@@ -88,18 +91,15 @@
 			},
 			messages: {
 				email: {
-					required: "Please enter email",
-					email: "Please enter an valid email address"
+					required: "*Please enter email",
+					email: "*Please enter an valid email address"
 				},
-				password:"Please enter password"
+				password:"*Please enter password"
 			}
 		});
 		
 	});
 	</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/ajax-mail.js"></script>
-    <script src="js/custom.js"></script>
 </body>
 
 </html>
