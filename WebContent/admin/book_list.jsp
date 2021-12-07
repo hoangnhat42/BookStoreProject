@@ -168,31 +168,36 @@
 								</tbody>
 							</table>
 							
+					<div class="pagination">	
+					<ul class="fixul numb">	
 							<%--For displaying Previous link except for the 1st page --%>
 						    <c:if test="${currentPage != 1}">
-						        <td><a href="${pageContext.request.contextPath}/admin/list_books?page=${currentPage - 1}">Previous</a></td>
+						        <li><a href="${pageContext.request.contextPath}/admin/list_books?page=${currentPage - 1}">Previous</a></li>
 						    </c:if>
 						 
 						    <%--For displaying Page numbers. The when condition does not display a link for the current page--%>
-						    <table border="1" cellpadding="5" cellspacing="5">
-						        <tr>
+						    
+						        
 						            <c:forEach begin="1" end="${noOfPages}" var="i">
 						                <c:choose>
 						                    <c:when test="${currentPage eq i}">
-						                        <td>${i}</td>
+						                        <li class = "numb">${i}</li>
 						                    </c:when>
 						                    <c:otherwise>
-						                        <td><a href="${pageContext.request.contextPath}/admin/list_books?page=${i}">${i}</a></td>
+						                        <li><a href="${pageContext.request.contextPath}/admin/list_books?page=${i}">${i}</a></li>
 						                    </c:otherwise>
 						                </c:choose>
 						            </c:forEach>
-						        </tr>
-						    </table>
+						        
+						    
 						     
 						    <%--For displaying Next link --%>
 						    <c:if test="${currentPage lt noOfPages}">
-						        <td><a href="${pageContext.request.contextPath}/admin/list_books?page=${currentPage + 1}">Next</a></td>
+						        <li><a href="${pageContext.request.contextPath}/admin/list_books?page=${currentPage + 1}">Next</a></li>
 						    </c:if>
+						    </ul>
+						    </div>
+						    
 						</div>
 					</div>
 					<!-- END ORDERS TABLE -->
