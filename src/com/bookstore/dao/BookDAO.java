@@ -3,11 +3,12 @@ package com.bookstore.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
-
-
+import java.util.Map;
 
 import com.bookstore.entity.Book;
+import com.bookstore.entity.BookOrder;
 
 public class BookDAO extends JpaDAO<Book> implements GenericDAO<Book> {
 
@@ -39,6 +40,10 @@ public class BookDAO extends JpaDAO<Book> implements GenericDAO<Book> {
 	@Override
 	public List<Book> listAll() {
 		return super.findWithNamedQuery("Book.findAll");
+	}
+	
+	public List<Book> listAll_Pagination(Integer offset, Integer noOfRecords) {
+		return super.findWithNamedQuery("Book.findAll_Pagination", offset, noOfRecords);
 	}
 	
 	public Book findByTitle(String title) {

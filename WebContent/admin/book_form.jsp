@@ -156,7 +156,7 @@
                                     <td class="text-right td-label"><label
                                         for="customer-name" class= "">Book Image:</label></td>
                                     <td><input type="text" class="input-focus usid"
-                                        name="bookImage" id="bookImage">
+                                        name="bookImage" id="bookImage" value='${book.image}'>
                                         <img id = "thumbnail" alt="Image Preview" style="width:20%; margin-top:10px"
                                         src="${book.image}"
                                       /></td>
@@ -221,7 +221,6 @@
                 category: "required",
                 title: "required",
                 author: "required",
-                isbn:"required",
                 publishDate: "required",
                 
                 <c:if test="${book == null}">
@@ -238,7 +237,6 @@
                 category:"Please select a category for the book",
                 title: "Please enter title of the book",
                 author:"Please enter author of the bool",
-                isbn:"Please enter ISBN of the book",
                 publishDate:"Please enter publish date of the bool",
                 bookImage:"Please choose an image of the book",
                 price:"Please enter price of the book",

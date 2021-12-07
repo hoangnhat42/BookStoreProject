@@ -13,7 +13,7 @@ public interface GenericDAO<E> {
 	public void delete(Object id);
 	
 	public List<E> listAll();
-	
+
 	public long count();
 	
 }

@@ -72,7 +72,7 @@ public class ResetPasswordServlet extends HttpServlet {
             message = "There were an error: " + ex.getMessage();
         } finally {
             request.setAttribute("message", message);
-            request.getRequestDispatcher("message.jsp").forward(request, response);
+            request.getRequestDispatcher("frontend/message.jsp").forward(request, response);
         }
     }
  

@@ -88,7 +88,7 @@
 		                                </div>
 		                                <div class="product-card--body">
 		                                    <div class="card-image">
-		                                        <img src="data:image/jpg;base64, ${book.base64Image}" alt="">
+		                                        <img src="${book.image}" alt="">
 		                                        <div class="hover-contents">
 		                                            <a href="product-details.html" class="hover-image">
 														<img src="image/products/product-1.jpg" alt="">
@@ -119,7 +119,7 @@
 		                        
 		                            <div class="product-list-content">
 		                                <div class="card-image">
-		                                    <img src="data:image/jpg;base64, ${book.base64Image}">
+		                                    <img src="${book.image}">
 		                                </div>
 		                                <div class="product-card--body">
 		                                    <div class="product-header">

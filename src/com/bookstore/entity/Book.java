@@ -1,6 +1,5 @@
 package com.bookstore.entity;
 
-import java.util.Base64;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashSet;
@@ -29,6 +28,7 @@ import org.hibernate.annotations.NamedQuery;
 @Table(name = "book", catalog = "bookstoredb", uniqueConstraints = @UniqueConstraint(columnNames = "title"))
 @NamedQueries({
 	@NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b"),
+	@NamedQuery(name = "Book.findAll_Pagination", query = "SELECT b FROM Book b ORDER BY b.bookId"),
 	@NamedQuery(name = "Book.findByTitle", query = "SELECT b FROM Book b WHERE b.title = :title"),
 	@NamedQuery(name = "Book.countAll", query = "SELECT COUNT(*) FROM Book b"),
 	@NamedQuery(name = "Book.countByCategory", query = "SELECT COUNT(b) FROM Book b "

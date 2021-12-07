@@ -49,7 +49,34 @@ public class BookServices {
 		String listPage = "book_list.jsp";
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(listPage);
 		requestDispatcher.forward(request, response);
+	}
+	
+	public void listBooks_Pagination() throws ServletException, IOException{
+		listBooks_Pagination(null);
+	}
+	
+	public void listBooks_Pagination(String message) throws ServletException, IOException {
+		Integer page = 1;
+		Integer recordsPerPage = 10;
+		Integer noOfRecords = (int) bookDAO.count();
+		Integer noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
 		
+		if(request.getParameter("page") != null)
+            page = Integer.parseInt(request.getParameter("page"));		
+		
+		List<Book> listBooks = bookDAO.listAll_Pagination((page - 1) * recordsPerPage, recordsPerPage);
+		
+		request.setAttribute("listBooks", listBooks);
+		request.setAttribute("noOfPages", noOfPages);
+		request.setAttribute("currentPage", page);
+		
+		if (message != null) {
+			request.setAttribute("message", message);
+		}
+		
+		String listPage = "book_list.jsp";
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(listPage);
+		requestDispatcher.forward(request, response);
 	}
 	
 	public void showBookNewForm() throws ServletException, IOException {
@@ -68,7 +95,7 @@ public class BookServices {
 		
 		if (existBook != null) {
 			String message = "Could not create new book because the title " + title + " already exists";
-			listBooks(message);
+			listBooks_Pagination(message);
 			return;
 		}
 		
@@ -80,7 +107,7 @@ public class BookServices {
 		if (createdBook.getBookId() > 0) {
 			String message = "A new book has been created successfully";
 			request.setAttribute("message",message);
-			listBooks(message);
+			listBooks_Pagination(message);
 		}
 	}
 
@@ -136,7 +163,7 @@ public class BookServices {
 		
 		if (bookByTitle != null && !existBook.equals(bookByTitle)) {
 			String message = "Could not update book because there's another book having same title.";
-			listBooks(message);
+			listBooks_Pagination(message);
 			return;
 		}
 		
@@ -145,7 +172,7 @@ public class BookServices {
 		bookDAO.update(existBook);
 		
 		String message = "The book has been updated successfully.";
-		listBooks(message);
+		listBooks_Pagination(message);
 		
 	}
 
@@ -155,7 +182,7 @@ public class BookServices {
 		bookDAO.delete(bookId);
 		
 		String message = "The book has been deleted successfully.";
-		listBooks(message);
+		listBooks_Pagination(message);
 	}
 
 	public void listBooksByCategory() throws ServletException, IOException {

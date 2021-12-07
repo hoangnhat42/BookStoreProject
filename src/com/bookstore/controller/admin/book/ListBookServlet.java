@@ -17,7 +17,7 @@ public class ListBookServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		BookServices bookServices = new BookServices(request, response);
-		bookServices.listBooks();
+		bookServices.listBooks_Pagination();
 	}
 
 }

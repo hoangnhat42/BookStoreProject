@@ -2,7 +2,7 @@
             <div>
              <a href="view_book?id=${book.bookId}">
                <img class="book-small" 
-               src="data:image/jpg;base64, ${book.base64Image}" />
+               src="${book.image}" />
               </a>
             </div>
             <div>
