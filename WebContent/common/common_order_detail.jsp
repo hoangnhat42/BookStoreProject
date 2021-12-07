@@ -81,7 +81,7 @@
 	       <tr>
 	           <td>${status.index + 1}</td>
 	           <td>
-	               <img style="vertical-align: middle;" src="data:image/jpg;base64,${orderDetail.book.base64Image}" width="48" height="64"/>
+	               <img style="vertical-align: middle;" src="${orderDetail.book.image}" width="48" height="64"/>
 	               ${orderDetail.book.title}
 	           </td>
 	           <td>${orderDetail.book.author}</td>

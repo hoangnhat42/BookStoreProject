@@ -78,7 +78,7 @@
 		                                                <td class="pro-remove"><a href="remove_from_cart?book_id=${item.key.bookId}"><i class="far fa-trash-alt"></i></a>
 		                                                </td>
 		                                                <td class="pro-thumbnail"><a href="view_book?id=${item.key.bookId}"><img
-																	src="data:image/jpg;base64, ${item.key.base64Image}" alt="Product"></a></td>
+																	src="${item.key.image}" alt="Product"></a></td>
 		                                                <td class="pro-title"><a href="view_book?id=${item.key.bookId}">${item.key.title}</a></td>
 		                                                <td class="pro-price"><span><fmt:formatNumber value="${item.key.price}" type="currency" /></span></td>
 		                                                <td class="pro-quantity">

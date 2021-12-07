@@ -48,7 +48,7 @@
               "asNavFor": ".product-slider-nav"
               }'>
                             <div class="single-slide">
-                                <img src="data:image/jpg;base64, ${book.base64Image}" alt="">
+                                <img src="${book.image}" alt="">
                             </div>
                             <!-- <div class="single-slide">
                                 <img src="image/products/product-details-2.jpg" alt="">
@@ -76,7 +76,7 @@
               "focusOnSelect": true
               }'>
                             <div class="single-slide">
-                                <img src="data:image/jpg;base64, ${book.base64Image}" alt="">
+                                <img src="${book.image}" alt="">
                             </div>
                             <!-- <div class="single-slide">
                                 <img src="image/products/product-details-2.jpg" alt="">

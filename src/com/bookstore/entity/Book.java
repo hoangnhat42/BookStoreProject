@@ -51,9 +51,7 @@ public class Book implements java.io.Serializable {
 	private String title;
 	private String author;
 	private String description;
-	private String isbn;
-	private byte[] image;
-	private String base64Image;
+	private String image;
 	private float price;
 	private Date publishDate;
 	private Date lastUpdateTime;
@@ -68,26 +66,24 @@ public class Book implements java.io.Serializable {
 		this.bookId = bookId;
 	}
 
-	public Book(Category category, String title, String author, String description, String isbn, byte[] image,
+	public Book(Category category, String title, String author, String description, String image,
 			float price, Date publishDate, Date lastUpdateTime) {
 		this.category = category;
 		this.title = title;
 		this.author = author;
 		this.description = description;
-		this.isbn = isbn;
 		this.image = image;
 		this.price = price;
 		this.publishDate = publishDate;
 		this.lastUpdateTime = lastUpdateTime;
 	}
 
-	public Book(Category category, String title, String author, String description, String isbn, byte[] image,
+	public Book(Category category, String title, String author, String description, String image,
 			float price, Date publishDate, Date lastUpdateTime, Set<Review> reviews, Set<OrderDetail> orderDetails) {
 		this.category = category;
 		this.title = title;
 		this.author = author;
 		this.description = description;
-		this.isbn = isbn;
 		this.image = image;
 		this.price = price;
 		this.publishDate = publishDate;
@@ -145,21 +141,12 @@ public class Book implements java.io.Serializable {
 		this.description = description;
 	}
 
-	@Column(name = "isbn", nullable = false, length = 15)
-	public String getIsbn() {
-		return this.isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
 	@Column(name = "image", nullable = false)
-	public byte[] getImage() {
+	public String getImage() {
 		return this.image;
 	}
 
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 
@@ -219,17 +206,7 @@ public class Book implements java.io.Serializable {
 	
 	
 	
-	
-	@Transient
-	public String getBase64Image() {
-		this.base64Image = Base64.getEncoder().encodeToString(this.image);
-		return this.base64Image;
-	}
 
-	@Transient
-	public void setBase64Image(String base64) {
-		this.base64Image = base64;
-	}
 	
 	@Transient
 	public float getAverageRating() {

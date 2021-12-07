@@ -148,23 +148,17 @@
                                 </tr>
                                 <tr>
                                     <td class="text-right td-label"><label
-                                        for="customer-name" class= "">ISBN:</label></td>
-                                    <td><input type="text" class="input-focus usid"
-                                        name="isbn" id="isbn" value="${book.isbn}"></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-right td-label"><label
                                         for="customer-name" class= "">Publish Date:</label></td>
                                     <td><input type="text" class="input-focus usid"
-                                        name="publishDate" id="publishDate" value="<fmt:formatDate pattern='MM/dd/yyyy' value='${book.publishDate}' />"></td>
+                                        name="publishDate" id="publishDate" value="<fmt:formatDate pattern='dd/MM/yyyy' value='${book.publishDate}' />"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-right td-label"><label
                                         for="customer-name" class= "">Book Image:</label></td>
-                                    <td><input type="file" class="input-focus usid"
+                                    <td><input type="text" class="input-focus usid"
                                         name="bookImage" id="bookImage">
                                         <img id = "thumbnail" alt="Image Preview" style="width:20%; margin-top:10px"
-                                        src="data:image/jpg;base64, ${book.base64Image}"
+                                        src="${book.image}"
                                       /></td>
                                 </tr>
                                 <tr>

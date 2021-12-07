@@ -35,7 +35,7 @@
 	                        <div class="row">
 	                        	<div class="col-lg-3">
 	                                    <h4><b>${book.title}</b></h4>
-	                        		<img src="data:image/jpg;base64, ${book.base64Image}"/>
+	                        		<img src="${book.image}"/>
 	                        	</div>
 	                        	
 	                            <div class="col-lg-9">

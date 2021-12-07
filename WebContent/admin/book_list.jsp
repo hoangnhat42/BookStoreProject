@@ -137,7 +137,7 @@
 													${book.bookId} </span></td>
 
 											<td><img
-												src="data:image/jpg;base64, ${book.base64Image}" width="84"
+												src="${book.image}" width="84"
 												height="110" /></td>
 
 											<td><span class="order-status order-shipped fontsize12px">

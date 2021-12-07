@@ -38,22 +38,19 @@ public class BookDAOTest {
 		Book newBook = new Book();
 		
 		Category category = new Category("Test");
-		category.setCategoryId(11);
+		category.setCategoryId(23);
 		newBook.setCategory(category);
 		
 		newBook.setTitle("Test (6nd Edition)");
 		newBook.setAuthor("Joshua Bloch");
 		newBook.setDescription("New coverage of generics, enums, annotations, autoboxing");
 		newBook.setPrice(38.87f);
-		newBook.setIsbn("0321356683");
+		newBook.setImage("https://i.imgur.com/OBV78Nf.jpg");
 		
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-		Date publishDate = dateFormat.parse("05/28/2008");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date publishDate = dateFormat.parse("28/05/2008");
 		newBook.setPublishDate(publishDate);
 			
-			String imagePath = "C:\\Users\\hoang\\Documents\\workspace\\BookStoreWebsite\\WebContent\\books\\Effective Java.jpg";
-		byte[] imageBytes = Files.readAllBytes(Paths.get(imagePath));
-		newBook.setImage(imageBytes);
 		
 		Book createdBook = bookDao.create(newBook);
 		
@@ -66,22 +63,19 @@ public class BookDAOTest {
 		Book newBook = new Book();
 		
 		Category category = new Category("Covers Spring");
-		category.setCategoryId(11);
+		category.setCategoryId(23);
 		newBook.setCategory(category);
 		
 		newBook.setTitle("Spring in Action: Covers Spring 4");
 		newBook.setAuthor("Craig Walls");
 		newBook.setDescription("Spring in Action, Fourth Edition is a hands-on guide to the Spring Framework.");
 		newBook.setPrice(33.99f);
-		newBook.setIsbn("161729120X");
+		newBook.setImage("https://i.imgur.com/OBV78Nf.jpg");
 		
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-		Date publishDate = dateFormat.parse("11/28/2014");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date publishDate = dateFormat.parse("28/11/2014");
 		newBook.setPublishDate(publishDate);
 		
-		String imagePath = "C:\\Users\\hoang\\Documents\\workspace\\BookStoreWebsite\\WebContent\\books\\Spring in Action.jpg";
-		byte[] imageBytes = Files.readAllBytes(Paths.get(imagePath));
-		newBook.setImage(imageBytes);
 		
 		Book createdBook = bookDao.create(newBook);
 		
@@ -94,22 +88,19 @@ public class BookDAOTest {
 		existBook.setBookId(32);
 		
 		Category category = new Category("Java Core Update");
-		category.setCategoryId(11);
+		category.setCategoryId(23);
 		existBook.setCategory(category);
 		
 		existBook.setTitle("Effective Java (5rd Edition)");
 		existBook.setAuthor("Joshua Bloch");
 		existBook.setDescription("New coverage of generics, enums, annotations, autoboxing");
 		existBook.setPrice(44f);
-		existBook.setIsbn("0321356683");
+		existBook.setImage("https://i.imgur.com/OBV78Nf.jpg");
 		
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-		Date publishDate = dateFormat.parse("05/28/2008");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date publishDate = dateFormat.parse("28/05/2008");
 		existBook.setPublishDate(publishDate);
 		
-		String imagePath = "C:\\Users\\hoang\\Documents\\workspace\\BookStoreWebsite\\WebContent\\books\\Spring in Action.jpg";
-		byte[] imageBytes = Files.readAllBytes(Paths.get(imagePath));
-		existBook.setImage(imageBytes);
 		
 		Book updatedBook = bookDao.update(existBook);
 		

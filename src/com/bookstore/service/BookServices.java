@@ -100,24 +100,24 @@ public class BookServices {
 	public void readBookFields(Book book) throws ServletException, IOException {
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
+		String image = request.getParameter("bookImage");
 		String description = request.getParameter("description");
-		String isbn = request.getParameter("isbn");
 		float price = Float.parseFloat(request.getParameter("price"));
 		
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date publishDate = null;
 		
 		try {
 			publishDate = dateFormat.parse(request.getParameter("publishDate"));
 		} catch (ParseException ex) {
 			ex.printStackTrace();
-			throw new ServletException("Error parsing publish date (format is MM/dd/yyyy)");
+			throw new ServletException("Error parsing publish date (format is dd/MM/yyyy)");
 		}
 		
 		book.setTitle(title);
 		book.setAuthor(author);
+		book.setImage(image);
 		book.setDescription(description);
-		book.setIsbn(isbn);
 		book.setPublishDate(publishDate);
 		
 		Integer categoryId = Integer.parseInt(request.getParameter("category"));
@@ -125,20 +125,6 @@ public class BookServices {
 		book.setCategory(category);
 		
 		book.setPrice(price);
-		
-		Part part = request.getPart("bookImage");
-		
-		if (part != null && part.getSize() > 0) {
-			long size = part.getSize();
-			byte[] imageBytes = new byte[(int) size];
-			
-			InputStream inputStream = part.getInputStream();
-			inputStream.read(imageBytes);
-			inputStream.close();
-			
-			book.setImage(imageBytes);
-		}
-		
 	}
 	
 	public void updateBook() throws ServletException, IOException {
