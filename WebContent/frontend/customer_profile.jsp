@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Customer Profile - Online Bookstore</title>
+    <title>${loggedCustomer.fullname} - Meta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Use Minified Plugins Version For Fast Page Load -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/plugins.css" />
@@ -15,7 +15,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/ajax-mail.js"></script>
     <script src="js/custom.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="image/Bookshop_Logo.ico">
 </head>
 
 <body>
@@ -46,10 +46,6 @@
                                     <a href="#dashboad" class="active" data-bs-toggle="tab"><i
 											class="fas fa-tachometer-alt"></i>
 										Dashboard</a>
-                                    <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Orders</a>
-                                    <a href="#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i>
-										Payment
-										Method</a>
                                     <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Account
 										Details</a>
                                     <a href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -67,61 +63,6 @@
                                                 <p>Hello, <strong>${loggedCustomer.fullname}</strong></p>
                                             </div>
                                             <p class="mb-0">From your account dashboard. you can easily check &amp; view your recent orders, manage your shipping and billing addresses and edit your password and account details.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="orders" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Orders</h3>
-                                            <div class="myaccount-table table-responsive text-center">
-                                                <table class="table table-bordered">
-                                                    <thead class="thead-light">
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Name</th>
-                                                            <th>Date</th>
-                                                            <th>Status</th>
-                                                            <th>Total</th>
-                                                            <th>Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Mostarizing Oil</td>
-                                                            <td>Aug 22, 2018</td>
-                                                            <td>Pending</td>
-                                                            <td>$45</td>
-                                                            <td><a href="cart.html" class="btn">View</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Katopeno Altuni</td>
-                                                            <td>July 22, 2018</td>
-                                                            <td>Approved</td>
-                                                            <td>$100</td>
-                                                            <td><a href="cart.html" class="btn">View</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td>Murikhete Paris</td>
-                                                            <td>June 12, 2017</td>
-                                                            <td>On Hold</td>
-                                                            <td>$99</td>
-                                                            <td><a href="cart.html" class="btn">View</a></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="payment-method" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Payment Method</h3>
-                                            <p class="saved-message">You Can't Saved Your Payment Method yet.</p>
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->

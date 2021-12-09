@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Page Not Found Error</title>
+<link rel="stylesheet" href="../css/404.css">
 <link rel="stylesheet" href="css/404.css">
 
 </head>

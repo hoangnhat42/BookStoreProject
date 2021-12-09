@@ -3,7 +3,7 @@
 	 <!--=================================
         Footer Area
         ===================================== -->
-        <footer class="site-footer">
+        <footer class="site-footer" id="my-footer">
             <div class="container">
                 <div class="row justify-content-between  section-padding">
                     <div class=" col-xl-3 col-lg-4 col-sm-6">

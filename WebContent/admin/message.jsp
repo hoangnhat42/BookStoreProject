@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Bookstore Administration</title>
+<link rel="shortcut icon" type="image/x-icon" href="../image/Bookshop_Logo.ico">
 </head>
 <body>
 

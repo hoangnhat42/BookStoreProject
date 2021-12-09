@@ -12,6 +12,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
+import com.bookstore.controller.frontend.shoppingcart.ShoppingCart;
 import com.bookstore.dao.CategoryDAO;
 import com.bookstore.entity.Category;
 
@@ -34,11 +35,16 @@ public class CommonFilter implements Filter {
 		String path = httpServletRequest.getRequestURI().substring(httpServletRequest.getContextPath().length());
 		
 		if (!path.startsWith("/admin/")) {
-			
 	        List<Category> listCategory = categoryDAO.listAll();
 			request.setAttribute("listCategory", listCategory);
 			
+			Object cartObject = httpServletRequest.getSession().getAttribute("cart");
+			if (cartObject == null) {
+				ShoppingCart shoppingCart = new ShoppingCart();
+				httpServletRequest.getSession().setAttribute("cart", shoppingCart);
+			}
 		}
+		
 		
 		chain.doFilter(request, response);
 	}

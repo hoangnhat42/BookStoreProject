@@ -18,7 +18,7 @@
    	<script src="js/jquery.validate.min.js"></script>
     <script src="js/ajax-mail.js"></script>
     <script src="js/custom.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="image/Bookshop_Logo.ico">
 </head>
 
 <body>
@@ -48,20 +48,7 @@
 	                            <div class="row row-40">
 	                                <div class="col-12">
 	                                    <h1 class="quick-title">Checkout</h1>
-	                                    <!-- Slide Down Trigger  -->
-	                                    <div class="checkout-quick-box">
-	                                        <p><i class="far fa-sticky-note"></i>Have a coupon? <a href="javascript:" class="slide-trigger" data-target="#quick-cupon">
-													Click here to enter your code</a></p>
-	                                    </div>
-	                                    <!-- Slide Down Blox ==> Cupon Box -->
-	                                    <div class="checkout-slidedown-box" id="quick-cupon">
-	                                        <form action="./">
-	                                            <div class="checkout_coupon">
-	                                                <input type="text" class="mb-0" placeholder="Coupon Code">
-	                                                <a href="" class="btn btn-outlined">Apply coupon</a>
-	                                            </div>
-	                                        </form>
-	                                    </div>
+	                                    <div class="checkout-quick-box"></div>
 	                                </div>
 	                            	<div class="col-lg-7 mb--20">
 	                                    <!-- Billing Address -->

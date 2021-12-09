@@ -14,6 +14,7 @@
    	<script src="js/plugins.js"></script>
     <script src="js/ajax-mail.js"></script>
     <script src="js/custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="image/Bookshop_Logo.ico">
 </head>
 <body>
 	<div class="site-wrapper" id="top">

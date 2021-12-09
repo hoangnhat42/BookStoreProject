@@ -7,7 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+import java.util.Random;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -202,6 +202,14 @@ public class BookServices {
 		Integer bookId = Integer.parseInt(request.getParameter("id"));
 		Book book = bookDAO.get(bookId);
 		
+		List<Book> relatedBooks = bookDAO.listByCategory(book.getCategory().getCategoryId());
+		Random rand = new Random();
+		while (relatedBooks.size() > 7) {
+			Integer remoIndex = rand.nextInt(relatedBooks.size());
+			relatedBooks.remove((int)remoIndex);
+		}
+		
+		request.setAttribute("relatedBooks", relatedBooks);	
 		request.setAttribute("book", book);
 		
 		String detailPage = "frontend/book_detail.jsp";

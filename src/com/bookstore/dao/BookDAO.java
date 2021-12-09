@@ -66,7 +66,7 @@ public class BookDAO extends JpaDAO<Book> implements GenericDAO<Book> {
 	
 	
 	public List<Book> listNewBooks() {
-		return super.findWithNamedQuery("Book.listNew", 0, 4);
+		return super.findWithNamedQuery("Book.listNew", 0, 12);
 	}
 	
 	@Override
@@ -79,12 +79,12 @@ public class BookDAO extends JpaDAO<Book> implements GenericDAO<Book> {
 	}
 
 	public List<Book> listBestSellingBooks() {
-		return super.findWithNamedQuery("OrderDetail.bestSelling", 0, 4);
+		return super.findWithNamedQuery("OrderDetail.bestSelling", 0, 12);
 	}
 	
 	public List<Book> listMostFavoredBooks() {
 		List<Book> mostFavoredBooks = new ArrayList<>();
-		List<Object[]>result = super.findWithNamedQueryObjects("Review.mostFavoredBooks", 0, 4);
+		List<Object[]>result = super.findWithNamedQueryObjects("Review.mostFavoredBooks", 0, 12);
 		
 		if (!result.isEmpty()) {
 			for (Object[] elements : result) {

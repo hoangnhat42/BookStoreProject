@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/styleadmin.css" />
     <script src="../js/plugins.js"></script>
     <script src="../js/custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../image/Bookshop_Logo.ico">
 <title>Add Book to Order</title>
 </head>
 <body>

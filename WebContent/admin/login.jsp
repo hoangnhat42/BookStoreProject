@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="../css/styleadmin.css" >
    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+   <link rel="shortcut icon" type="image/x-icon" href="../image/Bookshop_Logo.ico">
    
    <style>
         *{

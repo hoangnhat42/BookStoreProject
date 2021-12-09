@@ -77,7 +77,8 @@ public class OrderServices {
 		float tax = shoppingCart.getTotalAmount() * 0.1f;
 		
 		// shipping fee is 1.0 USD per copy
-		float shippingFee = shoppingCart.getTotalQuantity() * 1.0f;
+		float shippingFee = 2.99f;
+		if (shoppingCart.getTotalItems() == 0) shippingFee = 0.0f;
 		
 		float total = shoppingCart.getTotalAmount() + tax + shippingFee;
 		

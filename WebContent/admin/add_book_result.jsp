@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/app.css">
+<link rel="shortcut icon" type="image/x-icon" href="../image/Bookshop_Logo.ico">
 <title>Add Book to Order</title>
 </head>
 <body>
