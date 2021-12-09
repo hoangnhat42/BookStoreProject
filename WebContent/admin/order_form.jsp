@@ -38,7 +38,7 @@
 	<!-- SIDEBAR -->
 	<div class="sidebar">
 		<div class="sidebar-logo">
-			<img src="../images/logo-lg.png" alt="Comapny logo">
+			<img src="../image/logo.png" alt="Comapny logo">
 			<div class="sidebar-close" id="sidebar-close">
 				<i class='bx bx-left-arrow-alt'></i>
 			</div>
