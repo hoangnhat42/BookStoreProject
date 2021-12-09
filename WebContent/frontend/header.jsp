@@ -222,7 +222,7 @@
                                         <li class="menu-item-has-children">
                                             <a href="#">Shop Grid</a>
                                             <ul class="sub-menu">
-                                                <li><a href="shop-grid.html">Fullwidth</a></li>
+                                                <li><a >Fullwidth</a></li>
                                                 <li><a href="shop-grid-left-sidebar.html">left Sidebar</a></li>
                                                 <li><a href="shop-grid-right-sidebar.html">Right Sidebar</a></li>
                                             </ul>

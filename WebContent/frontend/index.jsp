@@ -41,7 +41,7 @@
                                             <h2>INSTA</h2>
                                             <p>Cover up front of book and
                                                 <br>leave summary</p>
-                                            <a href="shop-grid.html" class="btn btn-outlined--primary">
+                                            <a class="btn btn-outlined--primary">
                                                 Shop Now
                                             </a>
                                         </div>
@@ -56,7 +56,7 @@
                                             <h2 class="h2-v2">Hardcover.</h2>
                                             <p>Cover up front of book and
                                                 <br>leave summary</p>
-                                            <a href="shop-grid.html" class="btn btn-outlined--primary">
+                                            <a class="btn btn-outlined--primary">
                                                 Shop Now
                                             </a>
                                         </div>
@@ -377,24 +377,24 @@
                                                 <span class="author">
                                                     xpple
                                                 </span>
-                                                <h3><a href="product-details.html">Koss KPH7 Lightweight Portable
+                                                <h3><a href="#">Koss KPH7 Lightweight Portable
                                                         Headphone</a></h3>
                                             </div>
                                             <div class="product-card--body">
                                                 <div class="card-image">
                                                     <img src="image/products/product-2.jpg" alt="">
                                                     <div class="hover-contents">
-                                                        <a href="product-details.html" class="hover-image">
+                                                        <a href="#" class="hover-image">
                                                             <img src="image/products/product-1.jpg" alt="">
                                                         </a>
                                                         <div class="hover-btns">
-                                                            <a href="cart.html" class="single-btn">
+                                                            <a href="#" class="single-btn">
                                                                 <i class="fas fa-shopping-basket"></i>
                                                             </a>
-                                                            <a href="wishlist.html" class="single-btn">
+                                                            <a href="#" class="single-btn">
                                                                 <i class="fas fa-heart"></i>
                                                             </a>
-                                                            <a href="compare.html" class="single-btn">
+                                                            <a class="single-btn">
                                                                 <i class="fas fa-random"></i>
                                                             </a>
                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" class="single-btn">
@@ -420,7 +420,7 @@
                                                 <span class="author">
                                                     Ypple
                                                 </span>
-                                                <h3><a href="product-details.html">Beats EP Wired On-Ear
+                                                <h3><a >Beats EP Wired On-Ear
                                                         digital Headphone-Black                    
                                                        
                                   </a></h3>
@@ -429,17 +429,17 @@
                                                 <div class="card-image">
                                                     <img src="image/products/product-2.jpg" alt="">
                                                     <div class="hover-contents">
-                                                        <a href="product-details.html" class="hover-image">
+                                                        <a  class="hover-image">
                                                             <img src="image/products/product-1.jpg" alt="">
                                                         </a>
                                                         <div class="hover-btns">
-                                                            <a href="cart.html" class="single-btn">
+                                                            <a  class="single-btn">
                                                                 <i class="fas fa-shopping-basket"></i>
                                                             </a>
-                                                            <a href="wishlist.html" class="single-btn">
+                                                            <a  class="single-btn">
                                                                 <i class="fas fa-heart"></i>
                                                             </a>
-                                                            <a href="compare.html" class="single-btn">
+                                                            <a  class="single-btn">
                                                                 <i class="fas fa-random"></i>
                                                             </a>
                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" class="single-btn">
@@ -465,24 +465,24 @@
                                                 <span class="author">
                                                     Kpple
                                                 </span>
-                                                <h3><a href="product-details.html">Beats Solo2 Solo 2 Wired On-Ear
+                                                <h3><a >Beats Solo2 Solo 2 Wired On-Ear
                                                         Headphone</a></h3>
                                             </div>
                                             <div class="product-card--body">
                                                 <div class="card-image">
                                                     <img src="image/products/product-3.jpg" alt="">
                                                     <div class="hover-contents">
-                                                        <a href="product-details.html" class="hover-image">
+                                                        <a class="hover-image">
                                                             <img src="image/products/product-2.jpg" alt="">
                                                         </a>
                                                         <div class="hover-btns">
-                                                            <a href="cart.html" class="single-btn">
+                                                            <a class="single-btn">
                                                                 <i class="fas fa-shopping-basket"></i>
                                                             </a>
-                                                            <a href="wishlist.html" class="single-btn">
+                                                            <a  class="single-btn">
                                                                 <i class="fas fa-heart"></i>
                                                             </a>
-                                                            <a href="compare.html" class="single-btn">
+                                                            <a class="single-btn">
                                                                 <i class="fas fa-random"></i>
                                                             </a>
                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" class="single-btn">
@@ -508,24 +508,24 @@
                                                 <span class="author">
                                                     Zpple
                                                 </span>
-                                                <h3><a href="product-details.html">3 Ways To Have (A) More Appealing
+                                                <h3><a >3 Ways To Have (A) More Appealing
                                                         BOOK</a></h3>
                                             </div>
                                             <div class="product-card--body">
                                                 <div class="card-image">
                                                     <img src="image/products/product-5.jpg" alt="">
                                                     <div class="hover-contents">
-                                                        <a href="product-details.html" class="hover-image">
+                                                        <a  class="hover-image">
                                                             <img src="image/products/product-4.jpg" alt="">
                                                         </a>
                                                         <div class="hover-btns">
-                                                            <a href="cart.html" class="single-btn">
+                                                            <a  class="single-btn">
                                                                 <i class="fas fa-shopping-basket"></i>
                                                             </a>
-                                                            <a href="wishlist.html" class="single-btn">
+                                                            <a  class="single-btn">
                                                                 <i class="fas fa-heart"></i>
                                                             </a>
-                                                            <a href="compare.html" class="single-btn">
+                                                            <a  class="single-btn">
                                                                 <i class="fas fa-random"></i>
                                                             </a>
                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" class="single-btn">
@@ -551,24 +551,24 @@
                                                 <span class="author">
                                                     Rpple
                                                 </span>
-                                                <h3><a href="product-details.html">In 10 Minutes, I'll Give You The
+                                                <h3><a  >In 10 Minutes, I'll Give You The
                                                         Truth About</a></h3>
                                             </div>
                                             <div class="product-card--body">
                                                 <div class="card-image">
                                                     <img src="image/products/product-6.jpg" alt="">
                                                     <div class="hover-contents">
-                                                        <a href="product-details.html" class="hover-image">
+                                                        <a   class="hover-image">
                                                             <img src="image/products/product-4.jpg" alt="">
                                                         </a>
                                                         <div class="hover-btns">
-                                                            <a href="cart.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-shopping-basket"></i>
                                                             </a>
-                                                            <a href="wishlist.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-heart"></i>
                                                             </a>
-                                                            <a href="compare.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-random"></i>
                                                             </a>
                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" class="single-btn">
@@ -594,24 +594,24 @@
                                                 <span class="author">
                                                     Bpple
                                                 </span>
-                                                <h3><a href="product-details.html">Apple iPad with Retina Display
+                                                <h3><a  >Apple iPad with Retina Display
                                                         MD510LL/A</a></h3>
                                             </div>
                                             <div class="product-card--body">
                                                 <div class="card-image">
                                                     <img src="image/products/product-8.jpg" alt="">
                                                     <div class="hover-contents">
-                                                        <a href="product-details.html" class="hover-image">
+                                                        <a   class="hover-image">
                                                             <img src="image/products/product-7.jpg" alt="">
                                                         </a>
                                                         <div class="hover-btns">
-                                                            <a href="cart.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-shopping-basket"></i>
                                                             </a>
-                                                            <a href="wishlist.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-heart"></i>
                                                             </a>
-                                                            <a href="compare.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-random"></i>
                                                             </a>
                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" class="single-btn">
@@ -637,24 +637,24 @@
                                                 <span class="author">
                                                     Gaple
                                                 </span>
-                                                <h3><a href="product-details.html">5 Ways To Get Through To Your
+                                                <h3><a  >5 Ways To Get Through To Your
                                                         BOOK</a></h3>
                                             </div>
                                             <div class="product-card--body">
                                                 <div class="card-image">
                                                     <img src="image/products/product-13.jpg" alt="">
                                                     <div class="hover-contents">
-                                                        <a href="product-details.html" class="hover-image">
+                                                        <a   class="hover-image">
                                                             <img src="image/products/product-11.jpg" alt="">
                                                         </a>
                                                         <div class="hover-btns">
-                                                            <a href="cart.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-shopping-basket"></i>
                                                             </a>
-                                                            <a href="wishlist.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-heart"></i>
                                                             </a>
-                                                            <a href="compare.html" class="single-btn">
+                                                            <a   class="single-btn">
                                                                 <i class="fas fa-random"></i>
                                                             </a>
                                                             <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" class="single-btn">
@@ -797,7 +797,7 @@
                             <div class="col-lg-8">
                                 <div class="promo-text-inner">
                                     <h2>Buy 3. Get Free 1.</h2>
-                                    <h3>50% off for selected products in Pustok.</h3>
+                                    <h3>50% off for selected products in website.</h3>
                                     <a href="#" class="btn btn-outlined--red-faded">See More</a>
                                 </div>
                             </div>

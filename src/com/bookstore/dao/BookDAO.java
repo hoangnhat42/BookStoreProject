@@ -3,12 +3,11 @@ package com.bookstore.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 
 import com.bookstore.entity.Book;
-import com.bookstore.entity.BookOrder;
+
 
 public class BookDAO extends JpaDAO<Book> implements GenericDAO<Book> {
 
