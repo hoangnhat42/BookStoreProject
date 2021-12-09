@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pustok - Book Store HTML Template</title>
+    <title>List Order - Meta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Use Minified Plugins Version For Fast Page Load -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/plugins.css" />
@@ -32,7 +32,7 @@
                 <div class="breadcrumb-contents">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/">Home</a></li>
                             <li class="breadcrumb-item active">My Orders</li>
                         </ol>
                     </nav>

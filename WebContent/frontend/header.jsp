@@ -36,7 +36,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-3">
-                            <a href="${pageContext.request.contextPath}" class="site-brand">
+                            <a href="${pageContext.request.contextPath}/" class="site-brand">
                                 <img src="image/logo.png" alt="">
                             </a>
                         </div>
@@ -123,7 +123,7 @@
                 <div class="container">
                     <div class="row align-items-sm-end align-items-center">
                         <div class="col-md-4 col-7">
-                            <a href="${pageContext.request.contextPath}" class="site-brand">
+                            <a href="${pageContext.request.contextPath}/" class="site-brand">
                                 <img src="image/logo.png" alt="">
                             </a>
                         </div>
@@ -328,7 +328,7 @@
             <div class="container d-none d-lg-block">
                 <div class="row align-items-center">
                     <div class="col-lg-4">
-                        <a href="${pageContext.request.contextPath}" class="site-brand">
+                        <a href="${pageContext.request.contextPath}/" class="site-brand">
                             <img src="image/logo.png" alt="">
                         </a>
                     </div>
