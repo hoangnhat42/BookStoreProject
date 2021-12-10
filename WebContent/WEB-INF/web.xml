@@ -22,7 +22,7 @@
   	</error-page>
   	<context-param>
 	    <param-name>host</param-name>
-	    <param-value>smtp.gmail.com</param-value>
+	    <param-value>103.97.125.253</param-value>
 	</context-param>
 	 
 	<context-param>
@@ -32,7 +32,7 @@
 	 
 	<context-param>
 	    <param-name>email</param-name>
-	    <param-value>nguyenhoangnhat19110031@gmail.com</param-value>
+	    <param-value>bookshop@nhatsang.tk</param-value>
 	</context-param>
 	<context-param>
 	    <param-name>name</param-name>
