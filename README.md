@@ -1,14 +1,3 @@
-# Đồ án môn học Lập trình Web, Đồ án CNTT
-- Đề tài: **Xây dựng website bán sách trực tuyến**
-- Giáo viên hướng dẫn: ThS. Mai Anh Thơ
-- Sinh viên:
-  - Nguyễn Hoàng Nhật. MSSV: 19110031. 
-  - Phan Thanh Sang. MSSV: 19110276.
-- Báo cáo: 
-  - [File pdf](./Report_03_ITPROJ.pdf) 
- 
-Truy cập tại: https://metabookshop.herokuapp.com/
-Kết quả đạt được:
 
 •	Lập trình một trang web thương mại điện tử hoàn chỉnh để bán sách bằng Java Servlet, JSP và Hibernate framework, tổ chức theo mô hình MVC
 
@@ -35,3 +24,15 @@ Kết quả đạt được:
 •	Đóng gói và triển khai trang web với máy chủ Tomcat
 
 •	Kiểm tra code với Junit
+
+Program a complete e-commerce website that sells books using Java Servlet, JSP and Hibernate framework
+Build a Bookstore website that allows the customer to browse books, view details, search books, write reviews and register account and purchase books
+PayPal payment integration (including credit card payment)
+Build the admin panel that allows managers to manage books, customers, reviews and orders
+Use Hibernate framework with JPA for the data access layer
+Use Java Servlet for the controller layer
+Use JSP and JSTL for the view layer
+Use HTML, CSS, Javascript and jQuery for the view layer
+Design and manage Database with MySQL
+Code unit tests with JUnit
+Package and Deploy the website with Tomcat server
