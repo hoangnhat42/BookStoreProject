@@ -6,7 +6,7 @@
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.password">nhatsang</property>
-        <property name="hibernate.connection.url">jdbc:mysql://bookstoredb.cwrcmksfx05l.ap-southeast-1.rds.amazonaws.com:3306/bookstoredb</property>
+        <property name="hibernate.connection.url">jdbc:mysql://host456:3306/bookstoredb</property>
         <property name="hibernate.connection.username">admin</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     </session-factory>

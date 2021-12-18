@@ -31,8 +31,8 @@ import com.paypal.base.rest.PayPalRESTException;
 public class PaymentServices {
 
 	
-	private static final String CLIENT_ID = "x";
-	private static final String CLIENT_SECRET = "x";
+	private static final String CLIENT_ID = "AXxoeND3nEhCiPobZVm066_SYAqNfvhtzG6xzCd7xU4aWNcoYTzrrrAj623dTUWJfUJtMMDDSo8zlf-P";
+	private static final String CLIENT_SECRET = "EMlEif087jtY1Pp6qyPX8Wzk0b_ixmFv0xL_GPUxu3Y1r82v1JZU3w2QAVGyIEnanuj_tCR8rGtSB41Y";
 	
 	private String mode = "sandbox";
 	
